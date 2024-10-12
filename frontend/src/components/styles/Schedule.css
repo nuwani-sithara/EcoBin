@@ -1,0 +1,129 @@
+.schedule-container {
+    background-image: url('../../Assets/Schedulebg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+    opacity: 70%;
+}
+
+.schedule-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.scheduleform-container h2 {
+    text-align: center;
+    font-size: 1.8rem; 
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: black;
+    font-size: 1rem; 
+    width: 100%; 
+}
+
+input[type="text"],
+select,
+input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: black;
+    font-size: 1rem; 
+    box-sizing: border-box; 
+}
+
+.schedulebutton-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    margin-right: -35px;
+}
+
+button {
+    background-color: #004d00;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 100%; 
+    width: 200px; 
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease; 
+}
+
+button:hover {
+    background-color: #003300;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .scheduleform-container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    
+    input[type="text"],
+    select,
+    input[type="datetime-local"] {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        width: 100%; 
+        
+    }
+}
+
+/*mobile*/
+@media (max-width: 480px) {
+    .scheduleform-container {
+        padding: 10px;
+    }
+
+    input[type="text"],
+    select,
+    input[type="datetime-local"] {
+        padding: 8px;
+        font-size: 1.2rem; 
+    }
+
+    button {
+        padding: 1px 10px;
+        width: 100px; 
+        height: 40px;
+        font-size: 1.1 rem;
+    }
+
+    label {
+        font-size: 1.3rem; 
+    }
+
+    h2 {
+        font-size: 1.6rem; 
+        color: black;
+    }
+}

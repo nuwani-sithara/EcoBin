@@ -1,0 +1,123 @@
+.special-garbage-page {
+  background-image: url('../../Assets/GarbageDetailsbg.png');
+  background-size: cover;
+  background-position: center;
+  height: auto; 
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; 
+}
+
+.garbageform-container {
+  background-color: #A6C9AC;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 650px; 
+  opacity: 90%;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px; 
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px; 
+}
+
+.garbageform-group {
+  display: flex;
+  flex-direction: column; 
+}
+
+.garbageform-group.full-width {
+  grid-column: span 1;
+}
+
+.garbageform-group label {
+  font-size: 16px; 
+  margin-bottom: 5px; 
+}
+
+.garbageform-group input,
+.garbageform-group select,
+.garbageform-group textarea {
+  padding: 10px;
+  font-size: 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  width: 100%; 
+}
+
+textarea {
+  resize: none; 
+  height: 100px; 
+}
+
+.garbagenext-button {
+  width: 100%; 
+  background-color: #006400; 
+  color: white; 
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none; 
+  border-radius: 5px; 
+  font-size: 16px; 
+  cursor: pointer;
+  
+  display: block; 
+  grid-column: span 1; 
+  justify-self: center;
+}
+
+.garbagenext-button:hover {
+  background-color: #004d00; 
+}
+
+.garbageerror-message {
+  color: #e24c4c; 
+  font-size: 16px; 
+  margin-top: 5px; 
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 481px) {
+  form {
+      grid-template-columns: 1fr 1fr; 
+  }
+
+  .garbageform-group.full-width {
+      grid-column: span 2; 
+  }
+
+  .garbagenext-button {
+      width: 100px; 
+      max-width: 200px; 
+      margin: 20px auto; 
+    
+    }
+
+}
+
+@media (max-width: 480px) {
+  .garbageform-group label {
+      font-size: 1.5 rem; 
+  }
+
+  .garbageform-group input,
+  .garbageform-group select,
+  .garbageform-group textarea {
+      font-size: 1.4 rem; 
+  }
+
+  .garbagenext-button {
+      padding: 5px; 
+      width: 100px;
+  }
+}
