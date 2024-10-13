@@ -1,89 +1,86 @@
 const router = require("express").Router();
 let WasteDetail = require("../models/WasteDetail");
 
-//Add waste
-router.route("/add-waste").post((req,res)=> {
-    const category = req.body.category;
-    const waste = req.body.waste;
-    const weight = Number(req.body.weight);
-    const weightType = req.body.weightType;
-    const quantity = Number(req.body.quantity);
+// Add Multiple Waste Details
+router.route("/add-waste-multiple").post(async (req, res) => {
+    const { wasteDetails } = req.body;  // Expecting an array of waste details
 
-    const newWaste = new WasteDetail({
-        category,
-        waste,
-        weight,
-        weightType,
-        quantity
-    })
+    try {
+        if (!Array.isArray(wasteDetails) || wasteDetails.length === 0) {
+            return res.status(400).json({ error: "Waste details must be an array and cannot be empty." });
+        }
 
-    newWaste.save().then(()=>{
-        res.json("Waste Added");
-    }).catch((err)=>{
-        console.log(err);
-    })
-})
+        // Save all waste details
+        const newWastePromises = wasteDetails.map(wasteDetail => {
+            const { category, waste, weight, weightType, quantity } = wasteDetail;
+            const newWaste = new WasteDetail({
+                category,
+                waste,
+                weight,
+                weightType,
+                quantity
+            });
+            return newWaste.save();
+        });
 
-//view waste
-router.route("/view-waste").get((req,res)=>{
+        await Promise.all(newWastePromises); // Wait for all promises to complete
+        res.status(200).json("Multiple Waste Details Added Successfully");
 
-    WasteDetail.find().then((wastedetail)=>{
-        res.json(wastedetail)
-    }).catch((err)=>{
-        console.log(err)
-    })
+    } catch (err) {
+        console.error("Error adding multiple waste details:", err);
+        res.status(500).json({ error: err.message });
+    }
+});
 
-})
-
-//update waste detail
-router.route("/update-waste/:wasteid").put(async (req, res) => {
-    let wasteId = req.params.wasteid; 
-    const { category, waste, weight, weightType, quantity } = req.body;
-
-    const updateWastedetail = {
-        category,
-        waste,
-        weight,
-        weightType,
-        quantity
-    };
-
-    await WasteDetail.findByIdAndUpdate(wasteId, updateWastedetail)
-        .then(() => {
-            res.status(200).send({ status: "Waste Details Updated" });
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).send({ status: "Error with updating waste details", error: err.message });
+// View All Waste Details
+router.route("/view-waste").get((req, res) => {
+    WasteDetail.find().populate('category')  // Make sure 'category' is a valid reference
+        .then(wasteDetails => res.json(wasteDetails))
+        .catch(err => {
+            console.error("Error fetching waste details:", err);
+            res.status(500).json({ error: err.message });
         });
 });
 
-// delete waste detail
-router.route("/delete-waste/:wasteid").delete(async(req, res) => {
+// Update Waste Detail
+router.route("/update-waste/:wasteId").put(async (req, res) => {
+    const wasteId = req.params.wasteId;
+    const { category, waste, weight, weightType, quantity } = req.body;
 
-    let wasteId =req.params.wasteid;
+    try {
+        const updateWasteDetail = { category, waste, weight, weightType, quantity };
+        await WasteDetail.findByIdAndUpdate(wasteId, updateWasteDetail);
+        res.status(200).send({ status: "Waste Details Updated" });
+    } catch (err) {
+        console.error("Error updating waste details:", err);
+        res.status(500).send({ status: "Error with updating waste details", error: err.message });
+    }
+});
 
-    await WasteDetail.findByIdAndDelete(wasteId)
-    .then(() => {
-        res.status(200).send({status: "Waste Details Deleted"});
-    }).catch((err) => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with delete waste details", error: err.message});
-    })
-})
+// Delete Waste Detail
+router.route("/delete-waste/:wasteId").delete(async (req, res) => {
+    const wasteId = req.params.wasteId;
 
-// fetch only one waste
-router.route("/get-waste/:wasteid").get(async (req,res) => {
+    try {
+        await WasteDetail.findByIdAndDelete(wasteId);
+        res.status(200).send({ status: "Waste Details Deleted" });
+    } catch (err) {
+        console.error("Error deleting waste details:", err);
+        res.status(500).send({ status: "Error with deleting waste details", error: err.message });
+    }
+});
 
-    let wasteId =req.params.wasteid;
-    await WasteDetail.findById( wasteId)
-    .then((wastedetail) => {
-        res.status(200).send({status: "Waste Details Fetched", wastedetail})
-        
-    }).catch(() => {
-        console.log(err.message);
-        res.status(500).send({status: "Error with get Waste details", error: err.message});
-    })
-})
+// Fetch Single Waste Detail
+router.route("/get-waste/:wasteId").get(async (req, res) => {
+    const wasteId = req.params.wasteId;
+
+    try {
+        const wasteDetail = await WasteDetail.findById(wasteId).populate('category');
+        res.status(200).send({ status: "Waste Details Fetched", wasteDetail });
+    } catch (err) {
+        console.error("Error fetching waste details:", err);
+        res.status(500).send({ status: "Error with fetching waste details", error: err.message });
+    }
+});
 
 module.exports = router;
