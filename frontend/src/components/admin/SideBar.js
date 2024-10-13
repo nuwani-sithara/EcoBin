@@ -30,7 +30,7 @@ function SideBar() {
             {renderLink("/", "Recycle Waste Management")}
             {renderLink("/allgarbageDetails", "Waste Collection Management")}
             {renderLink("/", "Request and Purchase Management")}
-            {renderLink("/", "Garbage Handover Management")}
+            {renderLink("/handover-manage-home", "Garbage Handover Management")}
             {renderLink("/", "Profile Management")}
             <div className="sidebarmenu-bottom">
                 <button onClick={logout}>Logout</button>
