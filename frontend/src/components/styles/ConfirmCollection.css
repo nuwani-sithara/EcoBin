@@ -1,0 +1,131 @@
+
+.confirm-container {
+    padding-top: 200px;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 250px;
+}
+
+.confirm-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5DB85E;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    text-align: left;
+    position: relative;
+}
+
+.confirm-card h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.7rem;
+    color: #3d3939;
+}
+
+.confirmcollection-details {
+    flex-grow: 1;
+}
+
+.confirmcollection-details p {
+    font-size: 1.2rem;
+    margin: 8px 0;
+}
+
+.confirmicons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.confirmicons i {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #084114;
+    transition: color 0.3s;
+}
+
+.confirmicons i:hover {
+    color: #c22814;
+}
+
+.confirmimage-container {
+    width: 150px;
+    height: 150px;
+    background-image: url('../../Assets/recycle.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.confirm-btn {
+    background-color: #d32f2f;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 20px;
+    align-self: center;
+    width: 150px;
+}
+
+.confirm-btn:hover {
+    background-color: #9b2d2d;
+}
+
+.confirmbottom-image-container {
+    width: 100%;
+    height: 200px;
+    margin-bottom: -350px;
+    background-image: url('../../Assets/bottompic.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.confirmbottom-image {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .confirm-container{
+        padding-bottom: 100px;
+    }
+
+    .confirm-card {
+        width: 90%;
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .confirmbottom-image-container {
+        margin-bottom: -40px;
+        height:80px
+    }
+
+    .confirmbottom-image {
+        width: 100%;
+    }
+
+    .confirm-btn {
+        height: 50px;
+    }
+}

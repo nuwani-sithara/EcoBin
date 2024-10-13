@@ -1,0 +1,124 @@
+
+.admin-home-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+ 
+  /* Content Container */
+  .admin-content {
+    padding: 30px;
+    flex: 1;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+  }
+  
+  /* Header Styling */
+  .admin-header {
+    background-color: #0a6b40;
+    color: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+  
+  .admin-header p {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Dashboard Grid Layout */
+  .admin-dashboard {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Dashboard Cards */
+  .dashboard-card {
+    background-color: #80c47a;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .dashboard-icon {
+    font-size: 48px;
+    color: #118d26;
+    margin-bottom: 15px;
+  }
+  
+  .dashboard-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .dashboard-card p {
+    font-size: 16px;
+    color: #424141;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-btn {
+    background-color: #0a6b40;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none !important;
+}
+  
+  .dashboard-btn:hover {
+    background-color: #085a36;
+    color:#73a38e
+  }
+  
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .admin-content {
+      padding: 20px;
+    }
+  
+    .admin-header h1 {
+      font-size: 28px;
+    }
+  
+    .admin-header p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .admin-header h1 {
+      font-size: 24px;
+    }
+  
+    .dashboard-card h2 {
+      font-size: 20px;
+    }
+  
+    .dashboard-btn {
+      font-size: 14px;
+    }
+  }

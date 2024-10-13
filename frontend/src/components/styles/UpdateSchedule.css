@@ -1,0 +1,128 @@
+.scheduleupdate {
+    padding-top: 200px;
+    padding-bottom: 200px;
+    background-color: white;
+}
+
+.scheduleupdate-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.scheduleupdate-form {
+    background: #5DB85E;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; 
+    margin: 0 auto;
+    display: grid;
+    gap: 20px; 
+    grid-template-columns: 1fr; 
+}
+
+.scheduleupdate-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.scheduleupdate-label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.scheduleupdate-input,
+.scheduleupdate-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.scheduleupdate-input:focus,
+.scheduleupdate-select:focus {
+    border-color: #084114; 
+    outline: none;
+}
+
+.scheduleupdate-button-container {
+    display: flex;
+    justify-content: center; 
+    grid-column: span 1;
+}
+
+.scheduleupdate-button {
+    background-color: #084114;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%; 
+    max-width: 200px; 
+    text-align: center;
+}
+
+.scheduleupdate-button:hover {
+    background-color: #117426; 
+}
+
+.scheduleupdate-button:focus {
+    outline: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .scheduleupdate {
+        padding-top: 100px; 
+        padding-bottom: 100px;
+        margin-top: 200px;
+    }
+
+    .scheduleupdate-title {
+        font-size: 1.5rem; 
+    }
+
+    .scheduleupdate-form {
+        padding: 15px; 
+        gap: 15px; 
+    }
+
+    .scheduleupdate-input,
+    .scheduleupdate-select {
+        font-size: 20px; 
+    }
+
+    .scheduleupdate-button {
+        padding: 10px; 
+        font-size: 14px; 
+        height: 35px;
+    }   
+}
+
+@media (max-width: 480px) {
+    .scheduleupdate {
+        padding-top: 60px; 
+        padding-bottom: 60px;
+    }
+
+    .scheduleupdate-title {
+        font-size: 1.4rem; 
+    }
+
+    .scheduleupdate-form {
+        max-width: 90%; 
+    }
+
+    .scheduleupdate-button {
+        padding: 8px; 
+        font-size: 1.3 rem; 
+        height: 40px;
+    }
+}
