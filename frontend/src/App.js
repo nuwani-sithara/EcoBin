@@ -14,6 +14,14 @@ import CalculatePayment from './components/user/CalculatePayment';
 import Status from './components/user/Status';
 import { NotificationProvider } from './context/NotificationContext';
 
+import AddWasteAdmin from './components/admin/AddWasteAdmin';
+import AddCategory from './components/admin/AddCategory';
+import ManageCategories from './components/admin/ManageCategories';
+import AddWasteUser from './components/user/AddWasteUser';
+import ViewUserWastes from './components/user/ViewUserWastes';
+import HandoverManageHome from './components/admin/HandoverManageHome';
+import ManageWaste from './components/admin/ManageWaste';
+
 
 function App() {
     return (
@@ -35,6 +43,25 @@ function App() {
                     <Route path="/addpayment" element={<Payment />} />
                     <Route path="/addpaymentdetails" element={<CalculatePayment />} />
                     <Route path="/status" element={<Status />} />
+
+                    <Route path="/addwaste" element={<AddWasteAdmin/>} />
+                    <Route path="/add-category" element={<AddCategory/>} />
+                    <Route path="/manage-category" element={<ManageCategories/>} />
+                    {/* <Route path="/view-categoty" element={<ViewCategories/>} /> */}
+                    <Route path="/addwaste-user" element={<AddWasteUser/>} />
+                    <Route path="/view-waste-user" element={<ViewUserWastes/>} />
+                    <Route path="/handover-manage-home" element={<HandoverManageHome/>} />
+                    <Route path="/manage-waste" element={<ManageWaste/>} />
+
+
+
+
+
+
+
+
+
+
                 </Routes>
                 
             </Router>
