@@ -1,0 +1,235 @@
+/* src/styles/ManageCategories.css */
+
+/* Container Styling */
+.admin-container {
+    display: flex;
+}
+
+.manage-categories-content {
+    margin-left: 220px; /* Adjust based on sidebar width */
+    margin-right: 220px;
+    padding: 20px;
+    width: 100%;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+
+    /* Flexbox properties to center the table */
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+}
+
+/* Heading */
+.manage-categories-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Notification Styling */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.notification.success {
+    background-color: #28a745;
+}
+
+.notification.error {
+    background-color: #dc3545;
+}
+
+.close-notification {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* Table Styling */
+.categories-table {
+    width: 80%; /* Adjust width as needed */
+    max-width: 1000px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.categories-table th, .categories-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.categories-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.categories-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.categories-table tr:hover {
+    background-color: #ddd;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #777;
+}
+
+/* Button Styling */
+.edit-button, .delete-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.edit-button {
+    background-color: #ffc107;
+    color: white;
+}
+
+.edit-button:hover {
+    background-color: #e0a800;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    background: white;
+    width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    padding: 16px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.close-button {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #000;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-body label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.modal-body input[type="text"],
+.modal-body textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-footer {
+    padding: 16px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cancel-button, .save-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.cancel-button {
+    background-color: #6c757d;
+    color: white;
+}
+
+.cancel-button:hover {
+    background-color: #5a6268;
+}
+
+.save-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.save-button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .modal {
+        width: 90%;
+    }
+
+    .manage-categories-content {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,99 @@
+/* AddWasteUser.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.user-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #f0f0f0;
+}
+
+.add-waste-form {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.form-label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #c0c0c0;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-control,
+.form-select {
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%; /* Ensure it takes full width in small screens */
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px #6c63ff;
+    outline: none;
+}
+
+.btn-primary {
+    background-color: #1e90ff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1c86ee;
+}
+
+/* Align Select Category, Waste, Weight, Weight Type, and Quantity in a single row */
+.inline-group {
+    display: flex;
+    flex-wrap: wrap;  /* Allows wrap on smaller screens */
+    gap: 10px;
+}
+
+.inline-group .mb-3 {
+    flex: 1;  /* Ensure all items take up equal space */
+}
+
+@media (max-width: 768px) {
+    .inline-group {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+
+    .btn-primary {
+        width: 100%;
+        margin-top: 20px;
+    }
+}

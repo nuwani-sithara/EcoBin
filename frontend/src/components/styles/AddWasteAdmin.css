@@ -1,0 +1,19 @@
+/* src/styles/AddWasteAdmin.css */
+.admin-container {
+    display: flex;
+}
+
+.fm1 {
+    margin-left: 220px; /* Adjust based on sidebar width */
+    padding: 20px;
+    width: 100%;
+}
+
+.dvdv {
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn {
+    margin-top: 10px;
+}

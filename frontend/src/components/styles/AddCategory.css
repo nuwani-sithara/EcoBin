@@ -1,0 +1,122 @@
+/* AddCategory.css */
+
+/* Container Styling */
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f6f8;
+}
+
+/* Sidebar Styling (Assuming SideBar takes some width) */
+.admin-container .sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    transition: all 0.3s ease;
+}
+
+/* Main Content Styling */
+.admin-container .add-category-form {
+    flex: 1;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 600px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+}
+
+/* Form Heading */
+.add-category-form h2 {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #34495e;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form Group Styling */
+.add-category-form .mb-3 {
+    grid-column: span 2;
+    margin-bottom: 20px;
+}
+
+/* Labels Styling */
+.add-category-form .form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+/* Input Fields Styling */
+.add-category-form .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Fields Focus State */
+.add-category-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+
+/* Textarea Styling */
+.add-category-form textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Submit Button Styling */
+.add-category-form .btn-primary {
+    padding: 12px;
+    background-color: #3498db;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    height: fit-content;
+    align-self: flex-start;
+}
+
+/* Submit Button Hover Effect */
+.add-category-form .btn-primary:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Submit Button Active Effect */
+.add-category-form .btn-primary:active {
+    background-color: #1c5980;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .admin-container .add-category-form {
+        padding: 20px;
+        margin: 20px;
+        grid-template-columns: 1fr;
+    }
+
+    .add-category-form h2 {
+        font-size: 24px;
+    }
+
+    .add-category-form .btn-primary {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
