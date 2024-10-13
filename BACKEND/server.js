@@ -22,9 +22,9 @@ mongoose.connect(URL, {
 });
 
 const connection = mongoose.connection;
-connection.once("open", () => {
-    console.log("Mongodb Connection Success!");
-})
+connection.once('open', () => {
+    console.log('MongoDB Connection Success!');
+});
 
 const wastedetailRouter = require("./routes/wastedetail.js");
 const routedetailRouter = require("./routes/routedetail.js");
@@ -50,4 +50,16 @@ app.use("/cardpayment",cardpaymentRouter);
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`);
+});
+// Middleware
+app.use(cors()); // Enable CORS
+app.use(bodyParser.json()); // Parse JSON requests
+
+// Routes
+app.use('/api/auth', require('./routes/auth')); // Authentication routes
+app.use('/api/recycle', require('./routes/recycle')); // Recycle management routes
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
 });

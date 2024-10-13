@@ -1,0 +1,57 @@
+/* Main container for the progress bar */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the progress bar */
+  margin: 20px 0;
+}
+
+/* Progress bar styling */
+.progress-bar {
+  display: flex; /* Display items in a row */
+  align-items: center; /* Center the progress bar vertically */
+  width: 50% !important; /* Take the full width of the container */
+  max-width: 800px; /* Set a max width for larger screens */
+  justify-content: space-between; /* Evenly distribute the space */
+  position: relative;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+/* Individual step circles */
+.progress-step {
+  width: 25px !important; /* Circle width */
+  height: 25px !important; /* Circle height */
+  background-color: #ddd; /* Default inactive color */
+  border-radius: 50%; /* Make it a circle */
+  border: 2px solid #ddd; /* Border to indicate circle */
+  z-index: 1; /* Place circles on top of lines */
+  position: relative; /* Position relative to the lines */
+}
+
+/* Line between steps */
+.progress-line {
+  height: 12px !important; /* Use !important to ensure the height is applied */
+  flex-grow: 1; /* Make the line take up remaining space between steps */
+  background-color: #ddd; /* Default inactive color */
+  margin: 0 -12px; /* Adjust margin to make line touch circles */
+  z-index: -1; /* Place line below the circles */
+}
+
+/* Active step circle */
+.progress-step.active {
+  background-color: #2d6a4f; /* Green background for active */
+  border-color: #2d6a4f; /* Green border for active */
+}
+
+/* Active line */
+.progress-line.active {
+  background-color: #2d6a4f; /* Green color for active line */
+}
+
+/* Title below the progress bar */
+.progress-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
