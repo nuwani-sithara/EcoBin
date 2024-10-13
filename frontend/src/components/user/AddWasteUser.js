@@ -1,12 +1,21 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/AddWasteUser.css";
 import Header from "../Header";
 import Footer from "../Footer";
 
 export default function AddWasteUser() {
+
+    const { state } = useLocation(); 
+    const userEmail = state?.userEmail;
+    console.log(userEmail);
+    const navigate = useNavigate();
+
+    const [, setEmail] = useState("");
+
     const [wasteDetails, setWasteDetails] = useState([
-        { category: "", waste: "", weight: "", weightType: "", quantity: "" }
+        { email: userEmail, category: "", waste: "", weight: "", weightType: "", quantity: "" }
     ]);
     const [categories, setCategories] = useState([]);
 
@@ -28,7 +37,7 @@ export default function AddWasteUser() {
     };
 
     const addWasteField = () => {
-        setWasteDetails([...wasteDetails, { category: "", waste: "", weight: "", weightType: "", quantity: "" }]);
+        setWasteDetails([...wasteDetails, {email: userEmail, category: "", waste: "", weight: "", weightType: "", quantity: "" }]);
     };
 
     const removeWasteField = (index) => {
@@ -37,35 +46,62 @@ export default function AddWasteUser() {
         setWasteDetails(updatedWasteDetails);
     };
 
+    // const sendData = (e) => {
+    //     e.preventDefault();
+
+    //     axios.post("http://localhost:8070/wastedetail/add-waste-multiple", {
+    //         wasteDetails  // Ensure this is an array of objects
+    //     })
+    //     .then((response) => {
+    //         alert("Successfully added waste!");
+    //         console.log('Response:', response);
+            
+    //         // Reset form fields
+    //         setWasteDetails([{ category: "", waste: "", weight: "", weightType: "", quantity: "" }]);
+    //     })
+    //     .catch((err) => {
+    //         console.error("Error adding waste:", err.response ? err.response.data : err.message);
+    //         alert("Failed to add waste. Please try again.");
+    //     });
+        
+    // };
+
     const sendData = (e) => {
         e.preventDefault();
-
-        axios.post("http://localhost:8070/wastedetail/add-waste-multiple", {
-            wasteDetails  // Ensure this is an array of objects
-        })
-        .then((response) => {
-            alert("Successfully added waste!");
-            console.log('Response:', response);
-            
-            // Reset form fields
-            setWasteDetails([{ category: "", waste: "", weight: "", weightType: "", quantity: "" }]);
-        })
-        .catch((err) => {
-            console.error("Error adding waste:", err.response ? err.response.data : err.message);
-            alert("Failed to add waste. Please try again.");
-        });
-        
+    
+        // Log the payload to see what is being sent
+        console.log("Sending data:", wasteDetails);
+    
+        axios.post("http://localhost:8070/wastedetail/add-waste-multiple", { wasteDetails })
+            .then((response) => {
+                alert("Successfully added waste!");
+                console.log('Response:', response);
+    
+                // Reset to initial state
+                setWasteDetails([{ email: userEmail, category: "", waste: "", weight: "", weightType: "", quantity: "" }]);
+            })
+            .catch((err) => {
+                console.error("Error adding waste:", err.response ? err.response.data : err.message);
+                alert("Failed to add waste. Please try again.");
+            });
     };
+    
 
     return (
         <>
             <Header />
+            <div className="user-body1">
             <div className="user-container">
                 <form className="add-waste-form" onSubmit={sendData}>
                     <h2>Add Your Waste</h2>
                     {wasteDetails.map((wasteDetail, index) => (
                         <div key={index} className="waste-entry">
                             <div className="inline-group">
+                                <div className="mb-3">
+                                    <label for="email" className="form-label">Email</label>
+                                    <input type="email" className="form-control" id="email"
+                                    value={userEmail} disabled ></input>
+                                </div>
                                 <div className="mb-3">
                                     <label htmlFor={`category-${index}`} className="form-label">Select Waste Category</label>
                                     <select
@@ -96,30 +132,26 @@ export default function AddWasteUser() {
                                 <div className="mb-3">
                                     <label htmlFor={`weight-${index}`} className="form-label">Enter Weight</label>
                                     <div className="input-group">
-                                        <input
-                                            type="number"
-                                            className="form-control"
-                                            id={`weight-${index}`}
-                                            placeholder="Enter weight"
-                                            value={wasteDetail.weight}
-                                            onChange={(e) => handleWasteChange(index, 'weight', e.target.value)}
-                                            required
-                                        />
-                                        <select
-                                            className="form-select"
-                                            id={`weightType-${index}`}
-                                            value={wasteDetail.weightType}
-                                            onChange={(e) => handleWasteChange(index, 'weightType', e.target.value)}
-                                            required
-                                        >
-                                            <option value="">-- Select Weight Type --</option>
-                                            <option value="kg">kg</option>
-                                            <option value="g">g</option>
-                                            <option value="ton">ton</option>
-                                            <option value="lbs">lbs</option>
-                                            <option value="oz">oz</option>
-                                        </select>
-                                    </div>
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        id={`weight-${index}`}
+                                        placeholder="Enter weight"
+                                        value={wasteDetail.weight}
+                                        onChange={(e) => handleWasteChange(index, 'weight', e.target.value)}
+                                        required
+                                    />
+                                    <select
+                                        className="form-select"
+                                        id={`weightType-${index}`}
+                                        value="kg" // Fixing the value to "kg"
+                                        onChange={(e) => handleWasteChange(index, 'weightType', 'kg')} // Setting weight type to "kg"
+                                        disabled // Disabling the dropdown to prevent any changes
+                                    >
+                                        <option value="kg">kg</option> {/* kg is the only option */}
+                                    </select>
+                                </div>
+
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor={`quantity-${index}`} className="form-label">Enter Quantity</label>
@@ -144,6 +176,7 @@ export default function AddWasteUser() {
                     </button>
                     <button type="submit" className="btn btn-primary">Add Waste</button>
                 </form>
+            </div>
             </div>
             <Footer />
         </>

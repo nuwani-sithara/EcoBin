@@ -45,11 +45,20 @@ const HandoverManageHome = () => {
 
           <div className="dashboard-card">
           <i className="bx bxs-trash-alt dashboard-icon"></i>
-            <h2>Garbage Handover Management</h2>
+            <h2>Add Routes</h2>
             <p>
               Monitor garbage handovers and ensure proper disposal processes.
             </p>
-            <Link to="#" className="dashboard-btn">Manage</Link>
+            <Link to="/add-routes-admin" className="dashboard-btn">Manage</Link>
+          </div>
+
+          <div className="dashboard-card">
+          <i className="bx bxs-trash-alt dashboard-icon"></i>
+            <h2>Manage Routes</h2>
+            <p>
+              Monitor garbage handovers and ensure proper disposal processes.
+            </p>
+            <Link to="/manage-route-admin" className="dashboard-btn">Manage</Link>
           </div>
         </section>
       </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './RecycleManagement.css';
 import ProgressBar from './ProgressBar'; // Import the progress bar component
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import cardboardImg from '../photos/cartboard.jpg';
@@ -85,11 +85,11 @@ const RecycleManagement = ({ items, setItems }) => {
                     <div>
                       <div className="weight-control">
                         <button onClick={() => handleDecrement(itemName)}>
-                          <FontAwesomeIcon icon={faMinus} />
+                          {/* <FontAwesomeIcon icon={faMinus} /> */}
                         </button>
                         <span>{itemData.weight.toFixed(1)}</span>
                         <button onClick={() => handleIncrement(itemName)}>
-                          <FontAwesomeIcon icon={faPlus} />
+                          {/* <FontAwesomeIcon icon={faPlus} /> */}
                         </button>
                         
                         <p>Rs.{itemData.total.toFixed(2)}</p>
@@ -102,7 +102,7 @@ const RecycleManagement = ({ items, setItems }) => {
                             })
                           }
                         >
-                          <FontAwesomeIcon icon={faTimes} />
+                          {/* <FontAwesomeIcon icon={faTimes} /> */}
                         </button>
                       </div>
                       

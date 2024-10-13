@@ -7,6 +7,7 @@ export default function ManageWaste() {
     const [categories, setCategories] = useState([]); // New state for categories
     const [editedItem, setEditedItem] = useState(null);
     const [formData, setFormData] = useState({
+        email: '',
         category: '',
         waste: '',
         weight: '',
@@ -42,6 +43,7 @@ export default function ManageWaste() {
     const handleEdit = (item) => {
         setEditedItem(item._id);
         setFormData({
+            email: item.email || '',
             category: item.category?._id || '',
             waste: item.waste || '',
             weight: item.weight || '',
@@ -72,6 +74,7 @@ export default function ManageWaste() {
                 alert("Waste detail updated");
                 setEditedItem(null);
                 setFormData({
+                    email: '',
                     category: '',
                     waste: '',
                     weight: '',
@@ -105,6 +108,7 @@ export default function ManageWaste() {
                     <thead className="table-dark">
                         <tr className="tblrw">
                             <th scope="col">No</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Category</th>
                             <th scope="col">Waste</th>
                             <th scope="col">Weight</th>
@@ -117,6 +121,18 @@ export default function ManageWaste() {
                         {wastedetails.map((item, index) => (
                             <tr className="tblrw" key={item._id}>
                                 <th scope="row">{index + 1}</th>
+                                <td>
+                                    {editedItem === item._id ? (
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                        />
+                                    ) : (
+                                        item.email || 'N/A'
+                                    )}
+                                </td>
                                 <td>
                                     {editedItem === item._id ? (
                                         <select

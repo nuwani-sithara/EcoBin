@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const wasteSchema = new Schema({
+
+    email:{
+        type: String,
+        required: true
+    },
     category: {
         type: Schema.Types.ObjectId,
         ref: 'Category',
@@ -17,11 +22,23 @@ const wasteSchema = new Schema({
     },
     weightType: {
         type: String,
-        required: true
+        required: false
     },
     quantity: {
         type: Number,
         required: true
+    },
+    date: {
+        type: Date,
+        required: false
+    },
+    route: {
+        type: String,
+        required: false
+    },
+    time: {
+        type: String,
+        required: false
     }
 }, {
     timestamps: true

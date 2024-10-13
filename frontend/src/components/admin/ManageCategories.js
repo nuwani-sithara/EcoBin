@@ -6,7 +6,6 @@ import '../styles/ManageCategories.css'; // Import the custom CSS
 export default function ManageCategories() {
     const [categories, setCategories] = useState([]);
     const [editedItem, setEditedItem] = useState(null);
-    // const [selectedStatus, setSelectedStatus] = useState({}); 
 
 
     useEffect(() => {

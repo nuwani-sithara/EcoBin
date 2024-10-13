@@ -48,18 +48,21 @@ app.use("/schedule",scheduleRouter);
 app.use("/calculatepayment",calculatepaymentRouter);
 app.use("/cardpayment",cardpaymentRouter);
 
-app.listen(PORT, () => {
-    console.log(`Server is up and running on port number: ${PORT}`);
-});
-// Middleware
-app.use(cors()); // Enable CORS
-app.use(bodyParser.json()); // Parse JSON requests
-
-// Routes
 app.use('/api/auth', require('./routes/auth')); // Authentication routes
 app.use('/api/recycle', require('./routes/recycle')); // Recycle management routes
 
-// Start the server
 app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
+    console.log(`Server is up and running on port number: ${PORT}`);
 });
+
+// // Middleware
+// app.use(cors()); // Enable CORS
+// app.use(bodyParser.json()); // Parse JSON requests
+
+// Routes
+
+
+// // Start the server
+// app.listen(PORT, () => {
+//     console.log(`Server started on port ${PORT}`);
+// });

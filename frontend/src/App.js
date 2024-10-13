@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AdminHome from './components/admin/AdminHome';
 import UserHome from './components/user/UserHome';
 import GarbageDetails from './components/user/GarbageDetails';
@@ -21,6 +21,8 @@ import AddWasteUser from './components/user/AddWasteUser';
 import ViewUserWastes from './components/user/ViewUserWastes';
 import HandoverManageHome from './components/admin/HandoverManageHome';
 import ManageWaste from './components/admin/ManageWaste';
+import AddRoutes from './components/admin/AddRoutes';
+import ManageRoutes from './components/admin/ManageRoutes';
 
 import axios from 'axios';
 import Login from './pages/Login';
@@ -32,7 +34,6 @@ import ScheduleCollection from './pages/ScheduleCollection';
 import PrivateRoute from './components/PrivateRoute';
 import Success from './pages/Success';
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 
 
@@ -156,35 +157,166 @@ function App() {
                     </PrivateRoute>
                     }
                 />
-                </Routes>
-            )}
-               
-                <Routes>
-                    <Route path="/" element={<AdminHome />} />
-                    <Route path="/UserHome" element={<UserHome />} />
-                   
-                    <Route path="/addgarbageDetails" element={<GarbageDetails />} />
-                    <Route path="/addschedule" element={<Schedule />} />
-                    <Route path="/confirm" element={<ConfirmCollection />} />
-                    <Route path="/update-schedule/:scheduleId" element={<UpdateSchedule />} />
-                    <Route path="/addcardpayment" element={<PaymentOption/>} />
-                    <Route path="/allgarbageDetails" element={<SeeGarbageDetails/>} />
-                    <Route path="/allscheduleDetails" element={<SeeSchedule/>} />
-                    <Route path="/getgarbage/:garid" element={<CalculatePayment />} />
-                    <Route path="/addpayment" element={<Payment />} />
-                    <Route path="/addpaymentdetails" element={<CalculatePayment />} />
-                    <Route path="/status" element={<Status />} />
-
-                    <Route path="/addwaste" element={<AddWasteAdmin/>} />
-                    <Route path="/add-category" element={<AddCategory/>} />
-                    <Route path="/manage-category" element={<ManageCategories/>} />
-                    <Route path="/addwaste-user" element={<AddWasteUser/>} />
-                    <Route path="/view-waste-user" element={<ViewUserWastes/>} />
-                    <Route path="/handover-manage-home" element={<HandoverManageHome/>} />
-                    <Route path="/manage-waste" element={<ManageWaste/>} />
-
-                </Routes>
+                 <Route 
+                    path="/adminhome" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AdminHome />
+                        </PrivateRoute>
+                        } 
+                        />
+                <Route 
+                    path="/UserHome" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <UserHome />
+                    </PrivateRoute>
+                    } 
+                    />
                 
+                <Route 
+                    path="/addgarbageDetails" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <GarbageDetails />
+                    </PrivateRoute>
+                } />
+                <Route 
+                    path="/addschedule" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <Schedule />
+                    </PrivateRoute>
+                
+                    } />
+                <Route 
+                    path="/confirm" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <ConfirmCollection />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/update-schedule/:scheduleId" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <UpdateSchedule />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/addcardpayment" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <PaymentOption/>
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/allgarbageDetails" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <SeeGarbageDetails/>
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/allscheduleDetails" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <SeeSchedule/>
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/getgarbage/:garid" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <CalculatePayment />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/addpayment" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <Payment />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/addpaymentdetails" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <CalculatePayment />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/status" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <Status />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/addwaste" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AddWasteAdmin />
+                    </PrivateRoute>
+                    } />
+                 <Route 
+                    path="/add-category" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AddCategory />
+                    </PrivateRoute>
+                    } />
+                 <Route 
+                    path="/manage-category" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <ManageCategories />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/addwaste-user" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AddWasteUser />
+                    </PrivateRoute>
+                    } />
+                 <Route 
+                    path="/view-waste-user" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <ViewUserWastes />
+                    </PrivateRoute>
+                    } />
+                 <Route 
+                    path="/handover-manage-home" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <HandoverManageHome />
+                    </PrivateRoute>
+                    } />
+                 <Route 
+                    path="/manage-waste" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <ManageWaste />
+                    </PrivateRoute>
+                    } />
+                 <Route 
+                    path="/add-routes-admin" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AddRoutes />
+                    </PrivateRoute>
+                    } />
+                <Route 
+                    path="/manage-route-admin" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <ManageRoutes />
+                    </PrivateRoute>
+                    } />
+                </Routes>
+            )}     
             </Router>
         </NotificationProvider>
     );

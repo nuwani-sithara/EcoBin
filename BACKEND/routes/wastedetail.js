@@ -12,8 +12,9 @@ router.route("/add-waste-multiple").post(async (req, res) => {
 
         // Save all waste details
         const newWastePromises = wasteDetails.map(wasteDetail => {
-            const { category, waste, weight, weightType, quantity } = wasteDetail;
+            const { email, category, waste, weight, weightType, quantity } = wasteDetail;
             const newWaste = new WasteDetail({
+                email,
                 category,
                 waste,
                 weight,
@@ -45,10 +46,10 @@ router.route("/view-waste").get((req, res) => {
 // Update Waste Detail
 router.route("/update-waste/:wasteId").put(async (req, res) => {
     const wasteId = req.params.wasteId;
-    const { category, waste, weight, weightType, quantity } = req.body;
+    const { email, category, waste, weight, weightType, quantity } = req.body;
 
     try {
-        const updateWasteDetail = { category, waste, weight, weightType, quantity };
+        const updateWasteDetail = {email, category, waste, weight, weightType, quantity };
         await WasteDetail.findByIdAndUpdate(wasteId, updateWasteDetail);
         res.status(200).send({ status: "Waste Details Updated" });
     } catch (err) {

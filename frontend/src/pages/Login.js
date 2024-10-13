@@ -28,9 +28,9 @@ const Login = () => {
 
       // Navigate based on user type
       if (userType === 'admin') {
-        navigate('/adminhome'); // Navigate to admin home if user is an admin
+        navigate('/adminhome', { state: { userEmail: email } }); // Navigate to admin home if user is an admin
       } else {
-        navigate('/home'); // Navigate to user home otherwise
+        navigate('/UserHome', { state: { userEmail: email } }); // Navigate to user home otherwise
       }
     } catch (err) {
       console.error(err);
