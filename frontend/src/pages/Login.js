@@ -30,7 +30,7 @@ const Login = () => {
       if (userType === 'admin') {
         navigate('/adminhome'); // Navigate to admin home if user is an admin
       } else {
-        navigate('/home'); // Navigate to user home otherwise
+        navigate('/UserHome'); // Navigate to user home otherwise
       }
     } catch (err) {
       console.error(err);

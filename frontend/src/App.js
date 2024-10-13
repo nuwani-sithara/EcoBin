@@ -1,5 +1,3 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AdminHome from './components/admin/AdminHome';
 import UserHome from './components/user/UserHome';
 import GarbageDetails from './components/user/GarbageDetails';
@@ -24,6 +22,7 @@ import Summary from './pages/Summary';
 import ScheduleCollection from './pages/ScheduleCollection';
 import PrivateRoute from './components/PrivateRoute';
 import Success from './pages/Success';
+import AddCompostRequest from './components/user/AddCompostRequest';
 
 
 
@@ -65,7 +64,7 @@ function App() {
   const fetchUserData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/auth/user', {
+      const response = await axios.get('http://localhost:3000/api/auth/user', {
         headers: {
           'x-auth-token': token,
         },
@@ -81,6 +80,8 @@ function App() {
   const selectedItems = Object.values(items).filter((item) => item.selected);
   const totalWeight = selectedItems.reduce((acc, item) => acc + item.weight, 0);
   const totalPrice = selectedItems.reduce((acc, item) => acc + item.total, 0);
+
+  console.log(userEmail)
 
   return (
     <NotificationProvider>
@@ -145,7 +146,7 @@ function App() {
             }
           />
           <Route 
-            path="/" 
+            path="/AdminHome" 
             element={
               <PrivateRoute isAuthenticated={isAuthenticated}>
                 <AdminHome />
@@ -238,6 +239,14 @@ function App() {
                 <Status />
               </PrivateRoute>
             } />
+          <Route 
+            path="/addCompostRequest" 
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <AddCompostRequest userEmail={userEmail}/>
+              </PrivateRoute>
+            } />
+
         </Routes>
        )}       
     </Router>
