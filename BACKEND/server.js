@@ -19,12 +19,14 @@ mongoose.connect(URL, {
     // useNewUrlParser: true,
     // useUnifiedTopology: true,
     // useFindAndModify: false
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
 
 const connection = mongoose.connection;
-connection.once("open", () => {
-    console.log("Mongodb Connection Success!");
-})
+connection.once('open', () => {
+    console.log('MongoDB Connection Success!');
+});
 
 const garbageRouter = require("./routes/garbageDetails.js");
 const scheduleRouter = require("./routes/scheduleTime.js");
@@ -36,7 +38,13 @@ app.use("/garbage",garbageRouter);
 app.use("/schedule",scheduleRouter);
 app.use("/calculatepayment",calculatepaymentRouter);
 app.use("/cardpayment",cardpaymentRouter);
+app.use('/api/auth', require('./routes/auth')); // Authentication routes
+app.use('/api/recycle', require('./routes/recycle')); // Recycle management routes
 
 app.listen(PORT, () => {
     console.log(`Server is up and running on port number: ${PORT}`);
 });
+
+
+
+

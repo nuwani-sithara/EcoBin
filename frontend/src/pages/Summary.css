@@ -1,0 +1,130 @@
+.summary-container {
+  max-width: 1000px;
+margin: 20 auto;
+padding: 10px;
+margin-left: 150px;
+margin-right: 150px;
+box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+border: 2px solid rgb(15, 92, 25);
+}
+
+.summary-container h3{
+  font-size: 18px; /* Increase the font size */
+  margin-bottom: 20px; /* Add space below the heading */
+  width: 80%; /* Make it span full width */
+  text-align: left; /* Center-align the text */
+  color: rgb(15, 92, 25);
+  margin-left: 100px;
+}
+
+.summary-items h4{
+  font-size: 16px;
+}
+
+.payment-method{
+  margin-top: 80px;
+  padding: 20px;
+  width: 300px;
+  margin-right: 40px;
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-between;
+  margin-top:-30px;
+}
+
+.summary-items{
+  padding: 20px;
+  width: 45%;
+  margin-left: 30px;
+}
+
+.item-card2 {
+  display: flex;
+  flex-direction: column; /* Stack the details vertically */
+  justify-content: center;
+  align-items: flex-start; /* Align items to the start */
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  width: 90%; /* Full width of the parent container */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Space between item rows */
+}
+
+.item-row2 {
+  display: grid; /* Use grid layout for better control */
+  grid-template-columns: 1fr 1fr 1fr; /* Three columns */
+  gap: 5px; /* Space between columns */
+  border-bottom: 1px solid #eee;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Take full width of the container */
+  padding: 2px 0; /* Reduce padding under each row */
+margin-bottom: 5px; /* Reduce bottom margin between rows */
+
+}
+
+.item-row2 span {
+
+  text-align: center; /* Center-align text in each cell */
+  margin: 0px; /* Remove any default margin */
+padding: 5px; /* Remove padding around text */
+}
+
+.item-row2 .item-name {
+  grid-column: 1; /* First column for the item name */
+  text-align: left; /* Align text to the left */
+}
+
+.item-row2 .item-weight {
+  grid-column: 2; /* Second column for the weight */
+}
+
+.item-row2 .item-total {
+  grid-column: 3; /* Third column for the total */
+  text-align: right; /* Align text to the right */
+}
+
+.item-row2.total,
+.item-row2.service-fee,
+.item-row2.to-receive {
+  font-weight: bold;
+  border-bottom: 1px solid hsl(0, 0%, 100%);
+}
+
+.item-row2.service-fee {
+  color: red;
+}
+
+.item-row2.to-receive {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2d6a4f;
+  margin-top: 15px;
+  border-top: 2px solid #ddd; /* Optional: Add border for separation */
+  padding-top: 10px; /* Space above to receive amount */
+}
+
+.next-button-container2 {
+  text-align: center;
+  margin-top: -30px;
+
+}
+
+
+.next-button2 {
+  background: #58a653;
+  color: white;
+  border: none;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  margin-left: 800px;
+ 
+}
