@@ -29,10 +29,13 @@ connection.once("open", () => {
 const wastedetailRouter = require("./routes/wastedetail.js");
 const routedetailRouter = require("./routes/routedetail.js");
 const pickupdetailRouter = require("./routes/pickupdetail.js");
+const categoryRouter = require("./routes/category.js");
+
 
 app.use("/wastedetail", wastedetailRouter);
 app.use("/routedetail", routedetailRouter);
 app.use("/pickupdetail", pickupdetailRouter);
+app.use("/category", categoryRouter);
 
 const garbageRouter = require("./routes/garbageDetails.js");
 const scheduleRouter = require("./routes/scheduleTime.js");
