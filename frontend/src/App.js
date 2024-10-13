@@ -47,20 +47,10 @@ function App() {
                     <Route path="/addwaste" element={<AddWasteAdmin/>} />
                     <Route path="/add-category" element={<AddCategory/>} />
                     <Route path="/manage-category" element={<ManageCategories/>} />
-                    {/* <Route path="/view-categoty" element={<ViewCategories/>} /> */}
                     <Route path="/addwaste-user" element={<AddWasteUser/>} />
                     <Route path="/view-waste-user" element={<ViewUserWastes/>} />
                     <Route path="/handover-manage-home" element={<HandoverManageHome/>} />
                     <Route path="/manage-waste" element={<ManageWaste/>} />
-
-
-
-
-
-
-
-
-
 
                 </Routes>
                 
