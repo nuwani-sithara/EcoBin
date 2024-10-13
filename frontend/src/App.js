@@ -81,7 +81,7 @@ function App() {
   const totalWeight = selectedItems.reduce((acc, item) => acc + item.weight, 0);
   const totalPrice = selectedItems.reduce((acc, item) => acc + item.total, 0);
 
-  console.log(userEmail)
+  console.log(localStorage.getItem('userEmail'));
 
   return (
     <NotificationProvider>

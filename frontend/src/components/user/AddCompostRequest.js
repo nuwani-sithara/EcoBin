@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './../styles/AddCompostRequest.css';
+import Header from '../Header';
 
 // /c:/Users/Amith/Desktop/CSSE Project/EcoBin/frontend/src/components/user/AddCompostRequest.js
 
@@ -29,9 +30,9 @@ const AddCompostRequest = () => {
     };
 
     return (
-        <div className="compost-request-container">
+        <><div className="compost-request-container"><Header/>
             <h2>Add Compost Request</h2>
-            <p value={userEmail}></p>
+            <p>{userEmail}</p>
             <form onSubmit={handleSubmit} className="compost-request-form">
                 <div className="form-group">
                     <label htmlFor="name">Name:</label>
@@ -41,8 +42,7 @@ const AddCompostRequest = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        required
-                    />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="address">Address:</label>
@@ -52,8 +52,7 @@ const AddCompostRequest = () => {
                         name="address"
                         value={formData.address}
                         onChange={handleChange}
-                        required
-                    />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="quantity">Quantity (kg):</label>
@@ -63,8 +62,7 @@ const AddCompostRequest = () => {
                         name="quantity"
                         value={formData.quantity}
                         onChange={handleChange}
-                        required
-                    />
+                        required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="date">Date:</label>
@@ -74,12 +72,12 @@ const AddCompostRequest = () => {
                         name="date"
                         value={formData.date}
                         onChange={handleChange}
-                        required
-                    />
+                        required />
                 </div>
                 <button type="submit" className="submit-button">Submit</button>
             </form>
-        </div>
+        </div></>
+
     );
 };
 

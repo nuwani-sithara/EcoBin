@@ -29,7 +29,8 @@ const Login = () => {
       // Navigate based on user type
       if (userType === 'admin') {
         navigate('/adminhome'); // Navigate to admin home if user is an admin
-      } else {
+            } else {
+        localStorage.setItem('userEmail', email); // Save the user email to local storage
         navigate('/UserHome'); // Navigate to user home otherwise
       }
     } catch (err) {
