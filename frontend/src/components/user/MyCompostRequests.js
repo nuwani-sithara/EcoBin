@@ -163,7 +163,7 @@ export default function MyCompostRequests() {
                 </tbody>
             </table>
 
-        </div>
+        </div><Footer />
         </>
     );
 }

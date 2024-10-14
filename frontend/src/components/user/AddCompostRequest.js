@@ -78,10 +78,11 @@ const AddCompostRequest = () => {
     return (
         <>
             <Header />
+            <div className='dv1'>
             <div className="compost-request-container">
                 <div className="dv1">
-                    <h2>Compost Request</h2>
-                    <p>{userEmail}</p>
+                    <h1 className='h1'>Compost Request</h1>
+                    
                     <form onSubmit={handleSubmit} className="compost-request-form">
                         <div className="form-group">
                             <label htmlFor="organic">Organic Waste Weight (kg):</label>
@@ -149,7 +150,9 @@ const AddCompostRequest = () => {
                     </form>
                 </div>
             </div>
+            </div>
             <Footer />
+          
         </>
     );
 };

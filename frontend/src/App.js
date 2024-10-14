@@ -24,6 +24,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Success from './pages/Success';
 import AddCompostRequest from './components/user/AddCompostRequest';
 import MyCompostRequests from './components/user/MyCompostRequests';
+import AllCompostRequests from './components/admin/AllCompostRequests';
 
 
 
@@ -252,6 +253,13 @@ function App() {
             element={
               <PrivateRoute isAuthenticated={isAuthenticated}>
                 <MyCompostRequests userEmail={userEmail}/>
+              </PrivateRoute>
+            } />
+            <Route 
+            path="/AllCompostRequests" 
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <AllCompostRequests userEmail={userEmail}/>
               </PrivateRoute>
             } />
 

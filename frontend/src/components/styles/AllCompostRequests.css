@@ -1,0 +1,158 @@
+/* General page layout */
+.page-container {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin-top: 0%;
+}
+
+/* Sidebar styling */
+.sidebar {
+    margin-top: 0%;
+    width: 30vw;
+    background-color: #333;
+    padding: 15px;
+    color: white;
+    height: 100vh;
+    position: fixed;
+}
+
+/* Content container on the right */
+.content-container {
+    margin-top: 0%;
+    flex-grow: 1;
+    /* margin-left: 250px; Adjust margin to align with sidebar width */
+    padding: 20px;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+/* Compost container */
+.compost-container {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 70vw;
+    width: 100%;
+}
+
+/* Title styling */
+.compost-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+    color: #333;
+}
+
+/* Compost list styling */
+.compost-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Individual compost item */
+.compost-item {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Compost item text */
+.compost-text {
+    font-size: 18px;
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Actions container (edit/delete buttons) */
+.compost-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Compost status dropdown */
+.compost-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 250px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.btn {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Cancel button */
+.cancel-btn {
+    background-color: #f44336;
+}
+
+.cancel-btn:hover {
+    background-color: #e53935;
+}
+
+/* Edit button */
+.edit-btn {
+    background-color: #2196F3;
+}
+
+.edit-btn:hover {
+    background-color: #1e88e5;
+}
+
+/* Delete button */
+.delete-btn {
+    background-color: #f44336;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+    }
+
+    .compost-container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .btn, .compost-select {
+        width: 100%;
+    }
+
+    .compost-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

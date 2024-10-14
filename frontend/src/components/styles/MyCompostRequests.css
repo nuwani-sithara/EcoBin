@@ -1,11 +1,11 @@
 
 
 /* Page Container */
-.page-container {
-    margin: 30px auto;
+.compost-requests-page {
+    margin: 20vh auto;
     max-width: 1200px;
     padding: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     text-align: center;
