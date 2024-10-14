@@ -1,9 +1,10 @@
+const { compareSync } = require('bcryptjs');
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
 const CompostRequestSchema = new Schema({
-    userId: {
+    email: {
         type: String,
         required: true
     },
@@ -17,7 +18,15 @@ const CompostRequestSchema = new Schema({
         default: 'Pending',
         required: true
     },
-    quantity: {
+    potential: {
+        type: Number,
+        required: true
+    },
+    amount: {
+        type: Number,
+        required: true
+    },
+    cost: {
         type: Number,
         required: true
     },
