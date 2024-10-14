@@ -63,4 +63,15 @@ router.post('/', async (req, res) => {
   }
 });
 
+// GET route to fetch all collections
+router.get('/', async (req, res) => {
+  try {
+    const collections = await Collection.find(); // Fetch all collection records
+    res.status(200).json(collections); // Return the data as JSON
+  } catch (error) {
+    console.error('Error fetching collections:', error.message);
+    res.status(500).send('Server error');
+  }
+});
+
 module.exports = router;

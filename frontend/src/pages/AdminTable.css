@@ -1,0 +1,64 @@
+.table-container {
+    width: 80%;
+    margin: 40px auto;
+    border: 2px solid rgb(15, 92, 25);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table-title {
+    text-align: left;
+    color: rgb(45, 106, 79);
+    margin-bottom: 10px;
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-table th, .admin-table td {
+    border-bottom: 1px solid #eee;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .admin-table th {
+    font-weight: bold;
+    color: rgb(15, 92, 25);
+    border-bottom: 2px solid rgb(15, 92, 25);
+  }
+  
+  .admin-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .status-cell {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .status-badge {
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .status-badge.canceled {
+    background-color: #ccc;
+    color: black;
+  }
+  
+  .status-badge.finished {
+    background-color: #58a653;
+    color: white;
+  }
+  
+  .status-badge.pending {
+    background-color: #f0ad4e;
+    color: white;
+  }
+  

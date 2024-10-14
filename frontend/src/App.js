@@ -9,6 +9,7 @@ import Summary from './pages/Summary';
 import ScheduleCollection from './pages/ScheduleCollection';
 import PrivateRoute from './components/PrivateRoute';
 import Success from './pages/Success';
+import AdminTable from './pages/AdminTable'; // Import AdminTable page
 
 function App() {
   // Items state to manage recyclable items
@@ -81,6 +82,17 @@ function App() {
               </PrivateRoute>
             }
           />
+
+          <Route
+            path="/admin-table"
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <AdminTable />
+              </PrivateRoute>
+            }
+          />
+
+
           <Route
             path="/recycle-management"
             element={
