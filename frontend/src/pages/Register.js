@@ -38,7 +38,7 @@ const Register = () => {
     <div className="register-wrapper">
       <div className="register-container">
         <h2 className="register-title">Register</h2>
-        <form onSubmit={handleRegister}>
+        <form onSubmit={handleRegister} className="register-form">
           <div className="input-group">
             <label>Name:</label>
             <input type="text" name="name" value={name} onChange={handleChange} required />
