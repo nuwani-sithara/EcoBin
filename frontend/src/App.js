@@ -16,15 +16,17 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import axios from 'axios';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Home from './pages/Home';
-import RecycleManagement from './pages/RecycleManagement';
-import Summary from './pages/Summary';
-import ScheduleCollection from './pages/ScheduleCollection';
+import RecycleHome from './pages/RecycleHome';
+import RecycleManagement from './components/user/RecycleManagement';
+import Summary from './components/user/Summary';
+import ScheduleCollection from './components/user/ScheduleCollection';
 import PrivateRoute from './components/PrivateRoute';
-import Success from './pages/Success';
+import Success from './components/user/Success';
 import AddCompostRequest from './components/user/AddCompostRequest';
 import MyCompostRequests from './components/user/MyCompostRequests';
 import AllCompostRequests from './components/admin/AllCompostRequests';
+import AdminTable from './components/admin/AdminTable'; // Import AdminTable page
+import RecycleHistory from './components/user/RecycleHistory'; // Import the component
 
 
 
@@ -97,13 +99,32 @@ function App() {
 
           {/* Private Routes (Only accessible if authenticated) */}
           <Route
-            path="/home"
+            path="/recyclehome"
             element={
               <PrivateRoute isAuthenticated={isAuthenticated}>
-                <Home userName={userName} userEmail={userEmail} />
+                <RecycleHome userName={userName} userEmail={userEmail} />
               </PrivateRoute>
             }
           />
+          
+          <Route
+            path="/admin-table"
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <AdminTable />
+              </PrivateRoute>
+            }
+          />
+          
+          <Route
+            path="/recycle-history"
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <RecycleHistory />
+              </PrivateRoute>
+            }
+          />
+
           <Route
             path="/recycle-management"
             element={

@@ -17,7 +17,7 @@ function Header() {
                 </Link>
                 <ul className={isMenuOpen ? "active" : ""}>
                     <li><Link to="/UserHome">Home</Link></li>
-                    <li><Link to="">Waste Management</Link></li>
+                    <li><Link to="/recyclehome">Waste Management</Link></li>
                     <li><Link to="/addschedule">Waste Collection</Link></li>
                     <li><Link to="/addCompostRequest">Purchase Fertilizer</Link></li>
                     <li><Link to="">Garbage Handover</Link></li>
