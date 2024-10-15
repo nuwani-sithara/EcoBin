@@ -1,0 +1,88 @@
+/* Container styling */
+.schedule-container1 {
+  max-width: 1000px;
+  margin: 20 auto;
+  padding: 10px;
+  margin-left: 150px;
+  margin-right: 150px;
+  background-color: #f6f7f6;
+box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+border-radius: 12px;
+border: 2px solid rgb(22, 141, 38);
+  }
+
+  .schedule-container1 h3{
+    margin-top: 10px;
+    font-size: 18px; /* Increase the font size */
+    width: 80%; /* Make it span full width */
+    text-align: left; /* Center-align the text */
+    color: rgb(15, 92, 25);
+    margin-left: 100px;
+    }
+  
+  /* Form Section */
+  .schedule-form2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-left: -30px;
+    padding: 20px;
+
+  }
+  
+  /* Label Styling */
+  .schedule-form2 label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  
+  /* Input Fields Styling */
+  .schedule-form2 input[type="text"],
+  .schedule-form2 select,
+  .schedule-form2 .date-picker {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 60%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #e6f3e7; /* Light green background */
+    font-size: 16px;
+  }
+
+  .schedule-form2 .date-picker {
+    width: 330px !important;
+  }
+  
+  .schedule-form2 select {
+    cursor: pointer;
+  }
+  
+  .schedule-form2 input[type="text"]:focus,
+  .schedule-form2 .date-picker:focus,
+  .schedule-form2 select:focus {
+    border: 1px solid #58a653; /* Green border on focus */
+    
+  }
+  
+  /* Button Styling */
+  .confirm-button {
+    background: #58a653; /* Green background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 750px;
+  }
+  
+  .confirm-button:hover {
+    background: #45a145; /* Darker green on hover */
+  }

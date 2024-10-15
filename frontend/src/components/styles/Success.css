@@ -1,0 +1,74 @@
+.success-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .success-box {
+    margin-left: 100px;
+margin-right: 100px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border: 2px solid #58a653;
+    border-radius: 10px;
+  }
+  
+  .success-message {
+    color: #58a653;
+    font-size: 24px;
+  }
+  
+  .success-icon {
+    font-size: 100px; /* Font size for the icon */
+    color: #ffffff; /* Icon color */
+    margin: 20px 0; /* Spacing above and below */
+    width: 22%;
+    height: 30%;
+    background-color: #58a653;
+    border: 2px solid #58a653; /* 2px solid green border */
+    border-radius: 50%; /* Make it a perfect circle */
+    padding: 20px; /* Space between icon and border */
+    display: inline-block; /* Ensure the border wraps around the content */
+  }
+  
+  .amount {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .instructions {
+    margin-top: 10px;
+    font-style: italic;
+    margin-bottom: 35px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .home-button,
+  .more-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 300px;
+    border-radius: 8px;
+  }
+  
+  .home-button {
+    background: #fff;
+    border: 2px solid #58a653;
+   
+    color: #58a653;
+  }
+  
+  .more-button {
+    background: #58a653;
+    color: #fff;
+    border: none;
+  
+  }
+  
