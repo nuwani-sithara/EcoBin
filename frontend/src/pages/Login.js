@@ -47,9 +47,9 @@ const Login = () => {
         {/* Display login error message */}
         {error && <p className="error-message">{error}</p>}
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} className="login-form">
           {/* Email Input Field */}
-          <div className="input-group">
+          <div className="input-group1">
             <label>Email:</label>
             <input
               type="email"
@@ -59,9 +59,9 @@ const Login = () => {
               placeholder="Enter your email"
             />
           </div>
-
+      
           {/* Password Input Field */}
-          <div className="input-group">
+          <div className="input-group1">
             <label>Password:</label>
             <input
               type="password"
