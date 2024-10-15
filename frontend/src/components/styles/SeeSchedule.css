@@ -87,3 +87,25 @@ h2 {
     background-color: #097737;
     transform: translateY(-2px); 
 }
+
+.schedule-time-wrapper {
+    text-align: center; 
+    margin-top: 100px; 
+}
+.schedulegenerate-report-button {
+    padding: 12px 20px;
+    background-color: #1e9c33; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    
+}
+
+.schedulegenerate-report-button:hover {
+    background-color: #097737;
+    transform: translateY(-2px); 
+    
+}
