@@ -25,6 +25,7 @@ const Login = () => {
       // Store token and mark as logged in
       localStorage.setItem('token', token);
       localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('userEmail', email);
 
       // Navigate based on user type
       if (userType === 'admin') {

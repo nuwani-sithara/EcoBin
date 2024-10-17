@@ -34,6 +34,7 @@ import ScheduleCollection from './pages/ScheduleCollection';
 import PrivateRoute from './components/PrivateRoute';
 import Success from './pages/Success';
 import React, { useState, useEffect } from 'react';
+import UserWasteDetails from './components/user/UserWasteDetails';
 
 
 
@@ -315,6 +316,14 @@ function App() {
                         <ManageRoutes />
                     </PrivateRoute>
                     } />
+                <Route 
+                    path="/userwastedetails" 
+                    element={
+                    <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <UserWasteDetails userEmail={userEmail}/>
+                    </PrivateRoute>
+                    } />
+
                 </Routes>
             )}     
             </Router>

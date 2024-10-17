@@ -24,17 +24,14 @@ const wasteSchema = new Schema({
         type: String,
         required: false
     },
-    quantity: {
-        type: Number,
-        required: true
-    },
+    
     date: {
         type: Date,
         required: false
     },
     route: {
         type: String,
-        required: false
+        required: true
     },
     time: {
         type: String,

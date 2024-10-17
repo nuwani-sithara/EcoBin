@@ -1,7 +1,6 @@
 const router = require("express").Router();
 let WasteDetail = require("../models/WasteDetail");
 
-// Add Multiple Waste Details
 router.route("/add-waste-multiple").post(async (req, res) => {
     const { wasteDetails } = req.body;  // Expecting an array of waste details
 
@@ -12,14 +11,14 @@ router.route("/add-waste-multiple").post(async (req, res) => {
 
         // Save all waste details
         const newWastePromises = wasteDetails.map(wasteDetail => {
-            const { email, category, waste, weight, weightType, quantity } = wasteDetail;
+            const { email, category, waste, weight, weightType, route } = wasteDetail;  // Include route
             const newWaste = new WasteDetail({
                 email,
                 category,
                 waste,
                 weight,
                 weightType,
-                quantity
+                route // Save route
             });
             return newWaste.save();
         });
@@ -81,6 +80,26 @@ router.route("/get-waste/:wasteId").get(async (req, res) => {
     } catch (err) {
         console.error("Error fetching waste details:", err);
         res.status(500).send({ status: "Error with fetching waste details", error: err.message });
+    }
+});
+
+// Fetch Waste Details by User Email
+router.get("/user-waste/:email", async (req, res) => {
+    const userEmail = req.params.email;
+
+    try {
+        // Find all waste entries where email matches the user's email
+        const wasteDetails = await WasteDetail.find({ email: userEmail });
+
+        if (!wasteDetails) {
+            return res.status(404).json({ message: "No waste details found for this user" });
+        }
+
+        // Send the waste details as the response
+        res.json(wasteDetails);
+    } catch (err) {
+        console.error("Error fetching waste details:", err);
+        res.status(500).json({ error: "Server error" });
     }
 });
 

@@ -1,0 +1,123 @@
+/* General container styling */
+.uwd-admin-container {
+    margin-top: 24vh;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: #343a40; /* Main background */
+}
+
+/* Table styling */
+.uwd-table-wrapper {
+    margin: 20px;
+    overflow-x: auto; /* Allows horizontal scrolling on smaller screens */
+}
+
+.uwd-table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.uwd-table-hover tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.uwd-table-dark {
+    background-color: #343a40; /* Dark background for header */
+    color: white;
+}
+
+.uwd-table-row {
+    text-align: left;
+    padding: 8px;
+}
+
+.uwd-table-row th,
+.uwd-table-row td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd; /* Divider between rows */
+}
+
+.uwd-table-body {
+    background-color: #f9f9f9; /* Light background for table body */
+}
+
+/* Button styles */
+.uwd-edit-btn,
+.uwd-delete-btn,
+.uwd-save-btn,
+.uwd-cancel-btn {
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.uwd-edit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.uwd-edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.uwd-delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.uwd-delete-btn:hover {
+    background-color: #c82333;
+}
+
+.uwd-save-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.uwd-save-btn:hover {
+    background-color: #218838;
+}
+
+.uwd-cancel-btn {
+    background-color: #6c757d;
+    color: white;
+}
+
+.uwd-cancel-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Input and select styling */
+.uwd-input,
+.uwd-select {
+    width: 100%;
+    padding: 5px;
+    margin: 4px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8; /* Light background for inputs */
+}
+
+.uwd-input:focus,
+.uwd-select:focus {
+    border-color: #007bff; /* Highlight border on focus */
+    outline: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .uwd-table-wrapper {
+        margin: 10px; /* Reduce margin on smaller screens */
+    }
+
+    .uwd-table {
+        font-size: 0.9em; /* Slightly reduce font size */
+    }
+}

@@ -6,12 +6,13 @@
     color: white;
     margin: 0;
     padding: 0;
+    margin-top: 7vh;
 }
 
 .user-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 50px auto;
+    width: 80%;
+    max-width: 1500px;
+    margin: 10px auto;
     padding: 20px;
     background-color: #1f1f1f;
     border-radius: 10px;
@@ -64,16 +65,40 @@ h2 {
 .btn-primary {
     background-color: #1e90ff;
     border: none;
-    padding: 10px 20px;
     font-size: 18px;
     color: white;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    /* display: inline-block; */
+    height: 7vh;
+    margin-right: 5vw;
+    width: 20vw;
+    
+}
+.button1{
+    background-color: #1eff4f;
+    border: none;
+    font-size: 18px;
+    color: rgb(34, 17, 17);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    /* display: inline-block; */
+    height: 7vh;
+    margin-right: 5vw;
+    width: 20vw;
+}
+
+.btn-dv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn-primary:hover {
-    background-color: #1c86ee;
+    background-color: #1c85ee61;
 }
 
 /* Align Select Category, Waste, Weight, Weight Type, and Quantity in a single row */
