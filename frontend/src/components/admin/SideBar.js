@@ -26,11 +26,11 @@ function SideBar() {
         <div className="logoo-container">
             <div className="logoo"></div>
         </div>
-            {renderLink("/", "Home", false)}
+            {renderLink("/AdminHome", "Home", false)}
             {renderLink("/", "Recycle Waste Management")}
             {renderLink("/allgarbageDetails", "Waste Collection Management")}
-            {renderLink("/", "Request and Purchase Management")}
             {renderLink("/handover-manage-home", "Garbage Handover Management")}
+            {renderLink("/AllCompostRequests", "Request and Purchase Compost Management")}
             {renderLink("/", "Profile Management")}
             <div className="sidebarmenu-bottom">
                 <button onClick={logout}>Logout</button>

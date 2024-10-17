@@ -1,0 +1,110 @@
+.dv1 {
+    display: flex;
+    flex-direction: column;
+    margin: 10vh auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Compost request container styling */
+.compost-request-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Set max width for better readability */
+    width: 100%;
+    /* padding: 30px; */
+}
+
+/* H1 title styling */
+.h1 {
+    margin-top: 10vh;
+
+    font-size: 32px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* General paragraph/text styling */
+.p {
+    text-align: center;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Compost request form styling */
+.compost-request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between form elements */
+}
+
+/* Form group styling */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+/* Input field styling */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #28a745;
+    outline: none;
+}
+
+/* Submit button styling */
+button.submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+button.submit-button:hover {
+    background-color: #218838;
+}
+
+button.submit-button:active {
+    background-color: #1e7e34;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+    .compost-request-container {
+        padding: 20px;
+    }
+
+    h1.h1 {
+        font-size: 26px;
+    }
+
+    button.submit-button {
+        font-size: 16px;
+    }
+}

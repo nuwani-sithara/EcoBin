@@ -36,11 +36,11 @@ const AdminHome = () => {
 
           <div className="dashboard-card">
             <i className="bx bxs-cart dashboard-icon"></i>
-            <h2>Request & Purchase Management</h2>
+            <h2>Request & Purchase compost Management</h2>
             <p>
-              Handle purchase requests for waste bins, recycling equipment, and supplies.
+              Handle purchase requests for compost.
             </p>
-            <Link to="#" className="dashboard-btn">Manage</Link>
+            <Link to="/AllCompostRequests" className="dashboard-btn">Manage</Link>
           </div>
 
           <div className="dashboard-card">
