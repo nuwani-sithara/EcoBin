@@ -9,6 +9,7 @@ export default function MyCompostRequests() {
     const [compostRequests, setCompostRequests] = useState([]);
     const [editingRequest, setEditingRequest] = useState(null);
     const [newAmount, setNewAmount] = useState('');
+    const [newAddress, setNewAddress] = useState(''); // State for new address
     const [cost, setCost] = useState(0); // State for cost
     const navigate = useNavigate();
     
@@ -53,11 +54,12 @@ export default function MyCompostRequests() {
             await axios.put(`http://localhost:8070/compostRequest/updatemycompostrequest/${id}`, {
                 email: userEmail,
                 amount: newAmount,
+                address: newAddress, // Send updated address
                 cost: newAmount * 250 // Send the updated cost with the request
             });
             setCompostRequests(
                 compostRequests.map((request) =>
-                    request._id === id ? { ...request, amount: newAmount, cost: newAmount * 250 } : request
+                    request._id === id ? { ...request, amount: newAmount, address: newAddress, cost: newAmount * 250 } : request
                 )
             );
             setEditingRequest(null);
@@ -113,7 +115,17 @@ export default function MyCompostRequests() {
                                         compostRequest.cost
                                     )}
                                 </td>
-                                <td>{compostRequest.address}</td>
+                                <td>
+                                    {editingRequest === compostRequest._id ? (
+                                        <input
+                                            type="text"
+                                            className="edit-input"
+                                            value={newAddress}
+                                            onChange={(e) => setNewAddress(e.target.value)} />
+                                    ) : (
+                                        compostRequest.address
+                                    )}
+                                </td>
                                 <td>{compostRequest.status}</td>
                                 <td className="action-buttons">
                                     {editingRequest === compostRequest._id ? (
@@ -138,6 +150,7 @@ export default function MyCompostRequests() {
                                                 onClick={() => {
                                                     setEditingRequest(compostRequest._id);
                                                     setNewAmount(compostRequest.amount); // Set the amount when entering edit mode
+                                                    setNewAddress(compostRequest.address); // Set the address when entering edit mode
                                                 } }
                                             >
                                                 Edit

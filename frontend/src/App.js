@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AdminHome from './components/admin/AdminHome';
 import UserHome from './components/user/UserHome';
@@ -24,8 +23,6 @@ import ManageWaste from './components/admin/ManageWaste';
 import AddRoutes from './components/admin/AddRoutes';
 import ManageRoutes from './components/admin/ManageRoutes';
 
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import Login from './pages/Login';
 import Register from './pages/Register';

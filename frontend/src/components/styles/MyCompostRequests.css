@@ -11,6 +11,13 @@
     text-align: center;
 }
 
+.compost-requests-table{
+    width:80vw;
+}
+.page-title{
+    width: 80vw;
+}
+
 h1 {
     margin-top: 10vh;
     text-align: center;
@@ -63,6 +70,12 @@ tbody tr:hover {
     justify-content: flex-start; /* Align buttons to the start of the container */
 }
 
+.edit-input{
+    max-height: 30px;
+    width: 100px;
+}
+
+
 /* Individual button styles */
 button {
     padding: 8px 12px;
@@ -78,16 +91,22 @@ button {
     background-color: #4CAF50;
     color: white;
     width: 100px;
+    height: inherit;
 }
 
 .save-button {
     background-color: #2196F3;
     color: white;
+    height: inherit;
+    width: 100px;
 }
 
 .cancel-button {
     background-color: #f44336;
     color: white;
+    height: inherit;
+    width: 100px;
+
 }
 
 .delete-button {
