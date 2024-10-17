@@ -2,7 +2,17 @@
 
 /* Container Styling */
 .admin-container {
+    display: flexbox;
+    
+}
+.tb{
+    width: 70vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 10vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .manage-categories-content {

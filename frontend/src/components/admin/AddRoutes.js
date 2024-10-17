@@ -36,12 +36,12 @@ export default function AddRoutes() {
         <div className="admin-container">
             <SideBar />
             <form className="add-category-form" onSubmit={sendData}>
-                <h2>Add Date</h2>
+                <h2>Add Route</h2>
                 <div className="mb-3">
                     <label htmlFor="date" className="form-label">Date</label>
                     <input
                         type="date"
-                        className="form-control"
+                        className="form-control1"
                         id="date"
                         placeholder="Enter Category Name"
                         value={date}
@@ -52,7 +52,7 @@ export default function AddRoutes() {
                 <div className="mb-3">
                     <label htmlFor="route" className="form-label">Route </label>
                     <textarea
-                        className="form-control"
+                        className="form-control1"
                         id="route"
                         placeholder="Enter route"
                         value={route}
@@ -63,15 +63,16 @@ export default function AddRoutes() {
                     <label htmlFor="time" className="form-label">Time</label>
                     <input
                         type="time"  // Using input type="time" for time picker
-                        className="form-control"
+                        className="form-control1"
                         id="time"
                         placeholder="Select time"
                         value={time}
                         onChange={(e) => setTime(e.target.value)}
                     />
                 </div>
-
-                <button type="submit" className="btn btn-primary">Add Category</button>
+                <div style={{display:'flex',justifyContent:'center', alignItems:'center' }}>
+                <button type="submit" className="btn11">Add Route</button>
+                </div>
             </form>
         </div>
     );

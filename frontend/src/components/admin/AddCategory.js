@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import SideBar from './SideBar';
 import "../styles/AddCategory.css";
+import { Navigate } from "react-router";
 
 export default function AddCategory() {
 
@@ -21,6 +22,7 @@ export default function AddCategory() {
                 alert("Category Added Successfully!");
                 setName("");
                 setDescription("");
+                Navigate('/manage-category')
             })
             .catch(err => {
                 console.error(err);
@@ -37,7 +39,7 @@ export default function AddCategory() {
                     <label htmlFor="name" className="form-label">Category Name</label>
                     <input
                         type="text"
-                        className="form-control"
+                        className="form-control1"
                         id="name"
                         placeholder="Enter Category Name"
                         value={name}
@@ -48,14 +50,16 @@ export default function AddCategory() {
                 <div className="mb-3">
                     <label htmlFor="description" className="form-label">Description (Optional)</label>
                     <textarea
-                        className="form-control"
+                        className="form-control1"
                         id="description"
                         placeholder="Enter Description"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
                 </div>
-                <button type="submit" className="btn btn-primary">Add Category</button>
+                <div style={{display:'flex',justifyContent:'center', alignItems:'center'}}>
+                <button type="submit"  className="btn11">Add Category</button>
+                </div>
             </form>
         </div>
     );

@@ -36,7 +36,12 @@ const wasteSchema = new Schema({
     time: {
         type: String,
         required: false
-    }
+    },
+    status: {
+        type: String,
+        required: false,
+        default: 'Pending'
+    },
 }, {
     timestamps: true
 });

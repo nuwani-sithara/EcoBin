@@ -12,7 +12,8 @@ export default function ManageWaste() {
         waste: '',
         weight: '',
         weightType: '',
-        quantity: ''
+        quantity: '',
+        status: '' // Added status to formData
     });
 
     useEffect(() => {
@@ -48,7 +49,8 @@ export default function ManageWaste() {
             waste: item.waste || '',
             weight: item.weight || '',
             weightType: item.weightType || '',
-            quantity: item.quantity || ''
+            quantity: item.quantity || '',
+            status: item.status || '' // Include status for editing
         });
     };
 
@@ -78,8 +80,7 @@ export default function ManageWaste() {
                     category: '',
                     waste: '',
                     weight: '',
-                    weightType: '',
-                    quantity: ''
+                    status: '' // Reset status field
                 });
                 getWasteDetails();
             }).catch((err) => {
@@ -112,7 +113,8 @@ export default function ManageWaste() {
                             <th scope="col">Category</th>
                             <th scope="col">Waste</th>
                             <th scope="col">Weight</th>
-                            
+                            <th scope="col">Route</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -126,7 +128,7 @@ export default function ManageWaste() {
                                             type="email"
                                             name="email"
                                             value={formData.email}
-                                            onChange={handleInputChange}
+                                            disabled={true}
                                         />
                                     ) : (
                                         item.email || 'N/A'
@@ -174,7 +176,35 @@ export default function ManageWaste() {
                                         item.weight || 'N/A'
                                     )}
                                 </td>
-                                
+                                <td>
+                                    {editedItem === item._id ? (
+                                        <input
+                                            type="text"
+                                            name="route"
+                                            value={formData.route}
+                                            onChange={handleInputChange}
+                                            disabled={true}
+                                        />
+                                    ) : (
+                                        item.route || 'N/A'
+                                    )}
+                                </td>
+                                <td>
+                                    {editedItem === item._id ? (
+                                        <select
+                                            name="status"
+                                            value={formData.status}
+                                            onChange={handleInputChange}
+                                        >
+                                            <option value="Pending">Pending</option>
+                                            <option value="Approved">Approved</option>
+                                            <option value="On the Way">On the Way</option>
+                                            <option value="Completed">Completed</option>
+                                        </select>
+                                    ) : (
+                                        item.status || 'N/A'
+                                    )}
+                                </td>
                                 <td>
                                     {editedItem === item._id ? (
                                         <>

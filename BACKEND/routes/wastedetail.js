@@ -34,7 +34,7 @@ router.route("/add-waste-multiple").post(async (req, res) => {
 
 // View All Waste Details
 router.route("/view-waste").get((req, res) => {
-    WasteDetail.find().populate('category')  // Make sure 'category' is a valid reference
+    WasteDetail.find().populate('category')
         .then(wasteDetails => res.json(wasteDetails))
         .catch(err => {
             console.error("Error fetching waste details:", err);
@@ -45,10 +45,10 @@ router.route("/view-waste").get((req, res) => {
 // Update Waste Detail
 router.route("/update-waste/:wasteId").put(async (req, res) => {
     const wasteId = req.params.wasteId;
-    const { email, category, waste, weight, weightType, quantity } = req.body;
+    const { email, category, waste, weight,route, status } = req.body;
 
     try {
-        const updateWasteDetail = {email, category, waste, weight, weightType, quantity };
+        const updateWasteDetail = {email, category, waste, weight,route,status };
         await WasteDetail.findByIdAndUpdate(wasteId, updateWasteDetail);
         res.status(200).send({ status: "Waste Details Updated" });
     } catch (err) {

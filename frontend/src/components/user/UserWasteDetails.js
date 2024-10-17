@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Header from "../Header";
 import "../styles/UserWasteDetails.css";
+import Footer from "../Footer";
 
 export default function UserWasteDetails() {
     const [wastedetails, setWastesDetails] = useState([]);
     const [categories, setCategories] = useState([]);
     const [editedItem, setEditedItem] = useState(null);
+    const [routes, setRoutes] = useState([]);
+
     const [formData, setFormData] = useState({
         email: '',
         category: '',
@@ -14,20 +17,19 @@ export default function UserWasteDetails() {
         weight: '',
         weightType: '',
         quantity: '',
-        route: '' // Added route field
+        route: ''
     });
 
-    // Fetch the logged-in user's email
     const userEmail = localStorage.getItem("userEmail");
 
     useEffect(() => {
         if (userEmail) {
             getWasteDetails(userEmail);
-            getCategories(); // Fetch categories on component mount
+            getCategories();
+            getRoutes(); // Fetch routes on component mount
         }
     }, [userEmail]);
 
-    // Fetch waste details for the logged-in user
     const getWasteDetails = (email) => {
         axios.get(`http://localhost:8070/wastedetail/user-waste/${email}`)
             .then((res) => {
@@ -37,13 +39,21 @@ export default function UserWasteDetails() {
             });
     };
 
-    // Fetch all categories
     const getCategories = () => {
         axios.get("http://localhost:8070/category/view-categories")
             .then((res) => {
                 setCategories(res.data);
             }).catch((err) => {
                 console.error("Error fetching categories:", err);
+            });
+    };
+
+    const getRoutes = () => {
+        axios.get("http://localhost:8070/routedetail/view-route")
+            .then((res) => {
+                setRoutes(res.data);
+            }).catch((err) => {
+                console.error("Error fetching routes:", err);
             });
     };
 
@@ -56,11 +66,10 @@ export default function UserWasteDetails() {
             weight: item.weight || '',
             weightType: item.weightType || '',
             quantity: item.quantity || '',
-            route: item.route || '' // Include route in the formData
+            route: item.route || ''
         });
     };
 
-    // Handle input changes for controlled components
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
@@ -69,7 +78,6 @@ export default function UserWasteDetails() {
         }));
     };
 
-    // Update waste detail
     const saveEdit = (wasteId) => {
         if (!formData.category) {
             alert("Please select a valid category.");
@@ -87,7 +95,7 @@ export default function UserWasteDetails() {
                     weight: '',
                     weightType: '',
                     quantity: '',
-                    route: '' // Reset route on save
+                    route: ''
                 });
                 getWasteDetails(userEmail);
             }).catch((err) => {
@@ -108,8 +116,13 @@ export default function UserWasteDetails() {
             });
     };
 
+    const getCategoryName = (categoryId) => {
+        const category = categories.find(cat => cat._id === categoryId);
+        return category ? category.name : "N/A";
+    };
+
     return (
-        <div className="uwd-admin-container">
+        <><div className="uwd-admin-container">
             <Header />
             <div className="uwd-table-wrapper">
                 <table className="uwd-table uwd-table-hover">
@@ -120,8 +133,8 @@ export default function UserWasteDetails() {
                             <th scope="col">Category</th>
                             <th scope="col">Waste</th>
                             <th scope="col">Weight</th>
-                            
-                            <th scope="col">Route</th> {/* Added Route column */}
+                            <th scope="col">Route</th>
+                            <th scope="col">Status</th>
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
@@ -136,8 +149,7 @@ export default function UserWasteDetails() {
                                             className="uwd-input"
                                             name="email"
                                             value={formData.email}
-                                            onChange={handleInputChange}
-                                        />
+                                            onChange={handleInputChange} />
                                     ) : (
                                         item.email || 'N/A'
                                     )}
@@ -157,7 +169,7 @@ export default function UserWasteDetails() {
                                             ))}
                                         </select>
                                     ) : (
-                                        item.category?.name || 'N/A'
+                                        getCategoryName(item.category) || 'N/A'
                                     )}
                                 </td>
                                 <td>
@@ -167,8 +179,7 @@ export default function UserWasteDetails() {
                                             className="uwd-input"
                                             name="waste"
                                             value={formData.waste}
-                                            onChange={handleInputChange}
-                                        />
+                                            onChange={handleInputChange} />
                                     ) : (
                                         item.waste || 'N/A'
                                     )}
@@ -180,25 +191,31 @@ export default function UserWasteDetails() {
                                             className="uwd-input"
                                             name="weight"
                                             value={formData.weight}
-                                            onChange={handleInputChange}
-                                        />
+                                            onChange={handleInputChange} />
                                     ) : (
                                         item.weight || 'N/A'
                                     )}
                                 </td>
-                                
                                 <td>
                                     {editedItem === item._id ? (
-                                        <input
-                                            type="text"
-                                            className="uwd-input"
+                                        <select
                                             name="route"
                                             value={formData.route}
                                             onChange={handleInputChange}
-                                        />
+                                        >
+                                            <option value="">Select Route</option>
+                                            {routes.map(route => (
+                                                <option key={route._id} value={route.route}>
+                                                    {`Route: ${route.route}, Date: ${new Date(route.date).toLocaleDateString()}, Time: ${route.time}`}
+                                                </option>
+                                            ))}
+                                        </select>
                                     ) : (
-                                        item.route || 'N/A' // Display the route information
+                                        item.route || 'N/A'
                                     )}
+                                </td>
+                                <td>
+                                    {item.status || 'N/A'}
                                 </td>
                                 <td>
                                     {editedItem === item._id ? (
@@ -212,10 +229,18 @@ export default function UserWasteDetails() {
                                         </>
                                     ) : (
                                         <>
-                                            <button type="button" className="uwd-edit-btn" onClick={() => handleEdit(item)}>
+                                            <button
+                                                type="button"
+                                                className="uwd-edit-btn"
+                                                onClick={() => handleEdit(item)}
+                                            >
                                                 Edit
                                             </button>
-                                            <button type="button" className="uwd-delete-btn" onClick={() => deleteData(item._id)}>
+                                            <button
+                                                type="button"
+                                                className="uwd-delete-btn"
+                                                onClick={() => deleteData(item._id)}
+                                            >
                                                 Delete
                                             </button>
                                         </>
@@ -226,6 +251,6 @@ export default function UserWasteDetails() {
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div><Footer/></>
     );
 }
