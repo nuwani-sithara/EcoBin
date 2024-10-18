@@ -1,90 +1,104 @@
 /* Styling for the login wrapper */
 .login-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #ffffff; /* Add a nice gradient background */
-  }
-  
-  /* Container for the login form */
-  .login-container {
-    border: 2px solid rgb(15, 92, 25);
-    width: 400px;
-    padding: 30px;
-    background: #fff;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    text-align: center;
-  }
-  
-  /* Title styling */
-  .login-title {
-    margin-bottom: 20px;
-    font-size: 26px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Styling for input fields */
-  .input-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-  }
-  
-  .input-group input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  
-  /* Focus styling for input fields */
-  .input-group input:focus {
-    border: 1px solid #2ebf91;
-    box-shadow: 0 0 5px rgba(46, 191, 145, 0.3);
-    outline: none;
-  }
-  
-  /* Button styling */
-  .login-button {
-    width: 100%;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background: #2ebf91; /* Green background */
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .login-button:hover {
-    background: #239b7e; /* Darker shade on hover */
-  }
-  
-  /* Footer styling */
-  .login-footer {
-    margin-top: 15px;
-    color: #666;
-  }
-  
-  .login-footer a {
-    color: #2ebf91;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  
-  .login-footer a:hover {
-    color: #239b7e; /* Darker shade on hover */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #ffffff;
+}
+
+/* Container for the login form */
+.login-container {
+  border: 2px solid rgb(15, 92, 25);
+  width: 400px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* Title styling */
+.login-title {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Styling for the form and input fields */
+.login-form {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  gap: 15px; /* Add space between input fields */
+}
+
+/* Styling for input groups */
+.input-group1 {
+  display: flex;
+  flex-direction: column; /* Ensure label and input are vertical */
+  align-items: stretch;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Label styling */
+.input-group1 label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-align: left; /* Align the text to the left */
+}
+
+/* Input field styling */
+.input-group1 input {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Focus styling for input fields */
+.input-group1 input:focus {
+  border: 1px solid #2ebf91;
+  box-shadow: 0 0 5px rgba(46, 191, 145, 0.3);
+  outline: none;
+}
+
+/* Button styling */
+.login-button {
+  width: 60%; /* Adjust width as needed */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2ebf91;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  /* Center horizontally */
+  display: block; 
+  margin: 20px auto; /* Center the button with margin */
+}
+
+.login-button:hover {
+  background: #239b7e;
+}
+
+/* Footer styling */
+.login-footer {
+  margin-top: 15px;
+  color: #666;
+}
+
+.login-footer a {
+  color: #2ebf91;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.login-footer a:hover {
+  color: #239b7e;
+}

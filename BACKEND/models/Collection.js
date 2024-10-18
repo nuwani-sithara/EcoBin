@@ -45,6 +45,7 @@ const CollectionSchema = new mongoose.Schema({
     type: Date,
     required: true,
   },
+  status: { type: String, default: 'pending' }, // Ensure status field exists
 });
 
 const Collection = mongoose.model('Collection', CollectionSchema);

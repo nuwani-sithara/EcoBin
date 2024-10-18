@@ -1,93 +1,101 @@
 /* Styling for the register wrapper */
 .register-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    background: #ffffff; /* Same gradient background */
-  }
-  
-  /* Container for the register form */
-  .register-container {
-    
-    width: 450px;
-    padding: 30px;
-    background: #fff;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    border: 2px solid rgb(15, 92, 25);
-    text-align: center;
-  }
-  
-  /* Title styling */
-  .register-title {
-    margin-bottom: 20px;
-    font-size: 26px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Styling for input fields */
-  .input-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  .input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-  }
-  
-  .input-group input {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-  }
-  
-  /* Focus styling for input fields */
-  .input-group input:focus {
-    border: 1px solid #2ebf91;
-    box-shadow: 0 0 5px rgba(46, 191, 145, 0.3);
-    outline: none;
-  }
-  
-  /* Button styling */
-  .register-button {
-    width: 100%;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    background: #2ebf91; /* Green background */
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .register-button:hover {
-    background: #239b7e; /* Darker shade on hover */
-  }
-  
-  /* Footer styling */
-  .register-footer {
-    margin-top: 15px;
-    color: #666;
-  }
-  
-  .register-footer a {
-    color: #2ebf91;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  
-  .register-footer a:hover {
-    color: #239b7e; /* Darker shade on hover */
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150vh;
+  background: #ffffff;
+}
+
+/* Container for the register form */
+.register-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 450px;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 2px solid rgb(15, 92, 25);
+  text-align: center;
+
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+
+}
+
+/* Title styling */
+.register-title {
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input group styling */
+.input-group {
+  margin-bottom: -5px;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Focus styling */
+.input-group input:focus {
+  border: 1px solid #2ebf91;
+  box-shadow: 0 0 5px rgba(46, 191, 145, 0.3);
+  outline: none;
+}
+
+/* Button styling */
+.register-button {
+  width: 60%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #2ebf91;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  /* Center horizontally */
+  display: block; 
+  margin: 20px auto; /* Center the button with margin */
+}
+
+.register-button:hover {
+  background: #239b7e;
+}
+
+/* Footer styling */
+.register-footer {
+  margin-top: 15px;
+  color: #666;
+}
+
+.register-footer a {
+  color: #2ebf91;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.register-footer a:hover {
+  color: #239b7e;
+}

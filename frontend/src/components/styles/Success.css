@@ -4,9 +4,9 @@
   }
   
   .success-box {
-    margin-left: 150px;
-margin-right: 150px;
-    max-width: 800px;
+    margin-left: 100px;
+margin-right: 100px;
+    max-width: 900px;
     margin: 20px auto;
     padding: 30px;
     background: #f9f9f9;
@@ -23,7 +23,7 @@ margin-right: 150px;
     font-size: 100px; /* Font size for the icon */
     color: #ffffff; /* Icon color */
     margin: 20px 0; /* Spacing above and below */
-    width: 17%;
+    width: 22%;
     height: 30%;
     background-color: #58a653;
     border: 2px solid #58a653; /* 2px solid green border */
@@ -54,6 +54,7 @@ margin-right: 150px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    width: 300px;
     border-radius: 8px;
   }
   

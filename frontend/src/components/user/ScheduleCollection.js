@@ -3,9 +3,10 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import ProgressBar from './ProgressBar';
-import './ScheduleCollection.css';
+import '../styles/ScheduleCollection.css';
 import moment from 'moment-timezone'; // Import moment for precise time handling
-
+import Header from './../Header';
+import Footer from './../Footer';
 const ScheduleCollection = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -91,13 +92,15 @@ const ScheduleCollection = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div>
       <ProgressBar activeStep={3} />
       
-      <div className="schedule-container">
+      <div className="schedule-container1">
         <h3>Schedule a collections slot</h3>
 
-        <div className="schedule-form">
+        <div className="schedule-form2">
           <label>
             <span>Address:</span>
             <input
@@ -113,8 +116,31 @@ const ScheduleCollection = () => {
             <select value={district} onChange={(e) => setDistrict(e.target.value)}>
               <option value="">Select District</option>
               <option value="Colombo">Colombo</option>
-              <option value="Gampaha">Gampaha</option>
-              <option value="Kandy">Kandy</option>
+                <option value="Gampaha">Gampaha</option>
+                <option value="Kalutara">Kalutara</option>
+                <option value="Kandy">Kandy</option>
+                <option value="Matale">Matale</option>
+                <option value="Nuwara Eliya">Nuwara Eliya</option>
+                <option value="Galle">Galle</option>
+                <option value="Matara">Matara</option>
+                <option value="Hambantota">Hambantota</option>
+                <option value="Jaffna">Jaffna</option>
+                <option value="Kilinochchi">Kilinochchi</option>
+                <option value="Mannar">Mannar</option>
+                <option value="Vavuniya">Vavuniya</option>
+                <option value="Mullaitivu">Mullaitivu</option>
+                <option value="Trincomalee">Trincomalee</option>
+                <option value="Batticaloa">Batticaloa</option>
+                <option value="Ampara">Ampara</option>
+                <option value="Kurunegala">Kurunegala</option>
+                <option value="Puttalam">Puttalam</option>
+                <option value="Anuradhapura">Anuradhapura</option>
+                <option value="Polonnaruwa">Polonnaruwa</option>
+                <option value="Badulla">Badulla</option>
+                <option value="Monaragala">Monaragala</option>
+                <option value="Ratnapura">Ratnapura</option>
+                <option value="Kegalle">Kegalle</option>
+
             </select>
           </label>
 
@@ -135,6 +161,8 @@ const ScheduleCollection = () => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

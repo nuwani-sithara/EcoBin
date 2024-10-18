@@ -26,11 +26,11 @@ function Header() {
                 </Link>
                 <ul className={isMenuOpen ? "active" : ""}>
                     <li><Link to="/UserHome" state={{ userEmail }}>Home</Link></li>
-                    <li><Link to="" state={{ userEmail }}>Waste Management</Link></li>
-                    <li><Link to="/addschedule" state={{ userEmail }}>Waste Collection</Link></li>
-                    <li><Link to="/addCompostRequest" state={{ userEmail }}>Purchase Fertilizer</Link></li>
+                    <li><Link to="/recyclehome">Waste Management</Link></li>
+                    <li><Link to="/addschedule">Waste Collection</Link></li>
+                    <li><Link to="/addCompostRequest">Purchase Fertilizer</Link></li>
                     <li><Link to="/addwaste-user" state={{ userEmail }}>Garbage Handover</Link></li>
-                    <li><Link to="" state={{ userEmail }}>Profile</Link></li>
+                    <li><Link to="">Profile</Link></li>
                 </ul>
                 <i className='bx bx-menu-alt-right' id="menu" onClick={toggleMenu}></i>
             </nav>
