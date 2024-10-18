@@ -28,8 +28,8 @@ function Header() {
                     <li><Link to="/UserHome" state={{ userEmail }}>Home</Link></li>
                     <li><Link to="/recyclehome">Waste Management</Link></li>
                     <li><Link to="/addschedule">Waste Collection</Link></li>
-                    <li><Link to="/CompostActions">Purchase Fertilizer</Link></li>
-                    <li><Link to="/GarbageActions" state={{ userEmail }}>Garbage Handover</Link></li>
+                    <li><Link to="/addCompostRequest">Purchase Fertilizer</Link></li>
+                    <li><Link to="/addwaste-user" state={{ userEmail }}>Garbage Handover</Link></li>
                     <li><Link to="">Profile</Link></li>
                 </ul>
                 <i className='bx bx-menu-alt-right' id="menu" onClick={toggleMenu}></i>
