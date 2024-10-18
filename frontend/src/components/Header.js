@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./styles/Header.css";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../Assets/logo.png";
+import { useNavigate } from 'react-router-dom';
 
 function Header() {
+    const navigate = useNavigate();
 
     const {state} = useLocation();
     const userEmail = state?.userEmail;
@@ -16,6 +18,13 @@ function Header() {
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
     };
+
+    const handleLogout = () => {
+        // Remove authentication status from localStorage
+        localStorage.removeItem('isLoggedIn');
+        navigate('/login');
+      };
+    
 
 
     return (
@@ -31,6 +40,10 @@ function Header() {
                     <li><Link to="/CompostActions">Purchase Fertilizer</Link></li>
                     <li><Link to="/GarbageActions" state={{ userEmail }}>Garbage Handover</Link></li>
                     <li><Link to="">Profile</Link></li>
+                    <button onClick={handleLogout} style={{ padding: '5px 10px', fontSize: '16px', backgroundColor: 'green', width: '120px', height: '35px' }}>
+        Logout
+      </button>
+
                 </ul>
                 <i className='bx bx-menu-alt-right' id="menu" onClick={toggleMenu}></i>
             </nav>

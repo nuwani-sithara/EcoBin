@@ -24,7 +24,6 @@ router.post('/', async (req, res) => {
 
     // Check if any field is undefined
     if (
-      !userName ||
       !userEmail ||
       !items ||
       !totalWeight ||

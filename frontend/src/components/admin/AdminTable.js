@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../styles/AdminTable.css';
+import SideBar from './SideBar';
 
 const AdminTable = () => {
   const [collections, setCollections] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); // State for the search term
 
   // Fetch collections from the backend when the component mounts
   useEffect(() => {
@@ -38,56 +40,79 @@ const AdminTable = () => {
     }
   };
 
+  // Filter the collections based on the search term
+  const filteredCollections = collections.filter((collection) =>
+    collection.address.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    collection.district.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    collection.paymentType.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    collection.status?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="admin-table-container">
-      <h2>Recycle Management</h2>
-      <table className="admin-table">
-        <thead>
-          <tr>
-            <th>Address</th>
-            <th>District</th>
-            <th>Date & Time</th>
-            <th>Recycle Items</th>
-            <th>Payment Type</th>
-            <th>Total</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {collections.map((collection) => (
-            <tr key={collection._id}>
-              <td>{collection.address}</td>
-              <td>{collection.district}</td>
-              <td>{new Date(collection.dateTime).toLocaleString()}</td>
-              <td>
-                {collection.items.map((item, index) => (
-                  <div key={index}>
-                    {item.itemName} - {item.weight}kg
-                  </div>
-                ))}
-              </td>
-              <td>{collection.paymentType}</td>
-              <td>{collection.toReceive}</td>
-              <td>{collection.status || 'pending'}</td> {/* Display status */}
-              <td>
-                <button
-                  className="status-button cancelled"
-                  onClick={() => updateStatus(collection._id, 'Cancelled')}
-                >
-                  Cancelled
-                </button>
-                <button
-                  className="status-button finished"
-                  onClick={() => updateStatus(collection._id, 'Finished')}
-                >
-                  Finished
-                </button>
-              </td>
+    <div className="page-container">
+      <SideBar />
+      <div className="admin-table-container">
+        <h2 className='re-title'>Recycle Management</h2>
+        
+        {/* Search bar */}
+        <input
+          type="text"
+          placeholder="Search by Address, District, Payment Type, or Status"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="search"
+        />
+
+        <table className="admin-table">
+          <thead>
+            <tr>
+              <th>Address</th>
+              <th>District</th>
+              <th>Date & Time</th>
+              <th>Recycle Items</th>
+              <th>Payment Type</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredCollections.map((collection) => (
+              <tr key={collection._id}>
+                <td>{collection.address}</td>
+                <td>{collection.district}</td>
+                <td>{new Date(collection.dateTime).toLocaleString()}</td>
+                <td>
+                  {collection.items.map((item, index) => (
+                    <div key={index}>
+                      {item.itemName} - {item.weight}kg
+                    </div>
+                  ))}
+                </td>
+                <td>{collection.paymentType}</td>
+                <td>{collection.toReceive}</td>
+                <td>{collection.status || 'pending'}</td> {/* Display status */}
+                <td>
+                  <div className="button-container">
+                    <button
+                      className="status-button canceled"
+                      onClick={() => updateStatus(collection._id, 'Cancelled')}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="status-button finished"
+                      onClick={() => updateStatus(collection._id, 'Finished')}
+                    >
+                      Finish
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

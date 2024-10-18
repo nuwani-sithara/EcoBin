@@ -22,7 +22,7 @@ const AdminHome = () => {
             <p>
               Manage all recycling activities, track waste types, and processing updates.
             </p>
-            <Link to="#" className="dashboard-btn">Manage</Link>
+            <Link to="/admin-table" className="dashboard-btn">Manage</Link>
           </div>
 
           <div className="dashboard-card">

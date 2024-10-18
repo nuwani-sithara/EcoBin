@@ -27,7 +27,7 @@ function SideBar() {
             <div className="logoo"></div>
         </div>
             {renderLink("/AdminHome", "Home", false)}
-            {renderLink("/", "Recycle Waste Management")}
+            {renderLink("/admin-table", "Recycle Waste Management")}
             {renderLink("/allgarbageDetails", "Waste Collection Management")}
             {renderLink("/handover-manage-home", "Garbage Handover Management")}
             {renderLink("/AllCompostRequests", "Request and Purchase Compost Management")}

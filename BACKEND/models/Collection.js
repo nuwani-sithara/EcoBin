@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const CollectionSchema = new mongoose.Schema({
   userName: {
     type: String,
-    required: true,
   },
   userEmail: {
     type: String,
