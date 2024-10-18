@@ -12,7 +12,7 @@ import Payment from './components/admin/Payment';
 import CalculatePayment from './components/user/CalculatePayment';
 import Status from './components/user/Status';
 import { NotificationProvider } from './context/NotificationContext';
-
+import Home from './pages/RecycleHome';
 import AddWasteAdmin from './components/admin/AddWasteAdmin';
 import AddCategory from './components/admin/AddCategory';
 import ManageCategories from './components/admin/ManageCategories';
@@ -31,7 +31,6 @@ import RecycleManagement from './components/user/RecycleManagement';
 import Summary from './components/user/Summary';
 import ScheduleCollection from './components/user/ScheduleCollection';
 import PrivateRoute from './components/PrivateRoute';
-import Success from './pages/Success';
 import React, { useState, useEffect } from 'react';
 import UserWasteDetails from './components/user/UserWasteDetails';
 import Success from './components/user/Success';
