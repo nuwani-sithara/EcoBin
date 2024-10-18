@@ -1,14 +1,15 @@
-.schedule-container {
+.schedulebackground-image {
     background-image: url('../../Assets/Schedulebg.png');
     background-size: cover;
     background-position: center;
-    padding: 100px 20px; 
-    min-height: 100vh;
+    background-repeat: no-repeat;
+    min-height: 90vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding-top: 200px;
-    opacity: 70%;
+    justify-content: center;
+    opacity: 0.7;
+    margin-top: 150px;
+  
 }
 
 .schedule-form-container {
@@ -24,9 +25,11 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.scheduleform-container h2 {
+.schedule-form-container h2 {
     text-align: center;
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
+    color: black; 
+   
 }
 
 label {
@@ -79,9 +82,14 @@ button:hover {
 
 /* Responsive styles for smaller screens */
 @media (max-width: 768px) {
+    .schedulebackground-image{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     .scheduleform-container {
         max-width: 90%;
         padding: 15px;
+      
     }
     
     input[type="text"],
@@ -102,6 +110,7 @@ button:hover {
 @media (max-width: 480px) {
     .scheduleform-container {
         padding: 10px;
+     
     }
 
     input[type="text"],

@@ -87,7 +87,16 @@
     text-align: center; 
     margin-top: 100px; 
 }
-
+.garbage-generate-button{
+    padding: 12px 20px;
+    background-color: #0c5a19; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
 .booking-time-button {
     padding: 12px 20px;
     background-color: #1e9c33; 
@@ -97,11 +106,13 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
+    margin-left: 20px;
 }
 
 .booking-time-button:hover {
     background-color: #097737;
     transform: translateY(-2px); 
+    
 }
 
 .button-container {

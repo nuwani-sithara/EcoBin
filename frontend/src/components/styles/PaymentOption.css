@@ -7,14 +7,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0.7; 
+    opacity: 0.7;
+    margin-top: 200px;
 }
 
 .payment-container {
     background-color: #f7f7f7;
-    max-width: 600px;
-    margin: 200px auto; 
-    padding: 70px; 
+    max-width: 420px;
+    margin: 150px auto;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
@@ -26,18 +27,18 @@
 }
 
 .payment-container h1 {
-    color: #d9534f; 
-    margin: 20px 0; 
+    color: #d9534f;
+    margin: 20px 0;
 }
 
 .payment-container h2 {
     font-weight: bold;
-    color: #333; 
+    color: #333;
 }
 
 .payment-container h3 {
     font-weight: normal;
-    color: #666; 
+    color: #666;
 }
 
 .payment-methods {
@@ -47,28 +48,29 @@
 .payment-option {
     display: flex;
     align-items: center;
-    padding: 15px; 
+    justify-content: space-between;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
-    background-color: #ffffff; 
+    background-color: #ffffff;
 }
 
 .payment-option:hover {
-    background-color: rgba(255, 215, 0, 0.1); 
+    background-color: rgba(255, 215, 0, 0.1);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .payment-option.selected {
     color: white;
-    border-color: #5ecc4a; 
+    border-color: #5ecc4a;
 }
 
 .online-payment-options {
     margin-top: 10px;
-    border-top: 1px solid #ccc; 
+    border-top: 1px solid #ccc;
     padding-top: 10px;
 }
 
@@ -78,17 +80,17 @@
 
 .paymentform-grid {
     display: flex;
-    justify-content: space-between; 
-    gap: 15px; 
-    flex-wrap: wrap; 
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .paymentform-column {
-    flex: 1; 
+    flex: 1;
 }
 
 .paymentform-column input {
-    width: 100%; 
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -96,23 +98,23 @@
 }
 
 .paymentform-column input:focus {
-    border-color: #6cff52; 
-    outline: none; 
+    border-color: #6cff52;
+    outline: none;
 }
 
 .paymentsave-card-row {
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 .paymentbutton-container {
-    display: flex; 
-    justify-content: center; 
-    margin-top: 20px; 
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
 
 .paymentsubmit-button {
-    padding: 12px 25px; 
-    background-color: #155022; 
+    padding: 12px 25px;
+    background-color: #155022;
     color: white;
     border: none;
     border-radius: 5px;
@@ -121,48 +123,73 @@
 }
 
 .paymentsubmit-button:hover {
-    background-color: #348526; 
-    transform: scale(1.05); 
+    background-color: #348526;
+    transform: scale(1.05);
 }
 
+
+.payment-option label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.payment-option span {
+    flex-grow: 1;
+    text-align: left;
+    margin-left: -90px; 
+}
+
+.payment-option input[type="radio"] {
+    margin-left: -90px;
+}
+
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .payment-container {
-        margin: 250px auto; 
-        padding: 20px; 
-        margin-bottom: 100px;
+        max-width: 100%;
         margin-left: 10px;
         margin-right: 10px;
     }
 
     .payment-container h1 {
-        font-size: 24px; 
+        font-size: 24px;
     }
 
     .payment-container h2 {
-        font-size: 20px; 
+        font-size: 20px;
     }
 
     .payment-container h3 {
-        font-size: 18px; 
-    }
-
-    .payment-option {
-        flex-direction: column; 
-        align-items: flex-start; 
+        font-size: 18px;
     }
 
     .paymentform-grid {
-        flex-direction: column; 
+        flex-direction: column;
     }
 
     .paymentform-column {
-        width: 100%; 
-        margin-bottom: 15px; 
+        width: 100%;
+        margin-bottom: 10px;
     }
 
     .paymentsubmit-button {
-        width: 50%; 
-        height: 40px;
+        width: 100%;
+        height: 50px;
         font-size: 16px;
     }
+    
+    .payment-option span {
+        flex-grow: 1;
+        text-align: left;
+        margin-right: 10px;
+        padding-left: 60px;
+    }
+    
+    .payment-option input[type="radio"] {
+        margin-left: 10px; 
+    
+    }
 }
+
