@@ -103,7 +103,6 @@ export default function AllCompostRequests() {
                     </div>
                 </div>
             </div>
-            <Footer />
         </>
     );
 }
