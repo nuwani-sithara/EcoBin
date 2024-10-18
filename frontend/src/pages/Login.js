@@ -30,15 +30,14 @@ const Login = () => {
       localStorage.setItem('userEmail', email);
 
 
-       // Navigate based on user type
-       switch (userType) {
-        case "admin":
-            navigate("/AdminHome", { state: { userEmail: email } });
-            break;
-        case "user":
-            navigate("/UserHome", { state: { userEmail: email } });
-            break;
-    }
+      // Navigate based on user type
+      if (userType === 'admin') {
+        navigate('/adminhome', { state: { userEmail: email } }); // Navigate to admin home if user is an admin
+      } else {
+        localStorage.setItem('userEmail', email);
+        navigate('/UserHome', { state: { userEmail: email } }); // Navigate to user home otherwise
+        
+      }
     } catch (err) {
       console.error(err);
       setError('Invalid Credentials. Please try again.');
