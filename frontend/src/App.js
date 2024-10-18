@@ -39,6 +39,7 @@ import MyCompostRequests from './components/user/MyCompostRequests';
 import AllCompostRequests from './components/admin/AllCompostRequests';
 import AdminTable from './components/admin/AdminTable'; // Import AdminTable page
 import RecycleHistory from './components/user/RecycleHistory'; // Import the component
+import CompostActions from './components/user/CompostActions';
 
 
 
@@ -485,6 +486,16 @@ function App() {
                 <AllCompostRequests userEmail={userEmail}/>
               </PrivateRoute>
             } />
+
+            <Route 
+            path="/CompostActions" 
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <CompostActions userEmail={userEmail}/>
+              </PrivateRoute>
+            } />
+
+            
 
                 </Routes>
             )}     
