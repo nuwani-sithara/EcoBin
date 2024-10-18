@@ -167,10 +167,10 @@ function UserHome() {
                     <Link to="/addschedule" className="cta-btn">
                       Waste Collection
                     </Link>
-                    <Link to="/garbage-handover" className="cta-btn">
+                    <Link to="/addCompostRequest" className="cta-btn">
                         Purchase Fertilizer
                     </Link>
-                    <Link to="/user-profile" className="cta-btn">
+                    <Link to="/addwaste-user" className="cta-btn">
                        Garbage Handover
                     </Link>
                 </section>
