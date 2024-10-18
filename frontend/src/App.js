@@ -164,7 +164,7 @@ function App() {
                     }
                 />
                  <Route 
-                    path="/adminhome" 
+                    path="/AdminHome" 
                     element={
                     <PrivateRoute isAuthenticated={isAuthenticated}>
                         <AdminHome />
@@ -330,129 +330,129 @@ function App() {
                     } />
 
 
-          <Route
-            path="/success"
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <Success />
-              </PrivateRoute>
-            }
-          />
-          <Route 
-            path="/AdminHome" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <AdminHome />
-                </PrivateRoute>} 
-          />
-          <Route 
-            path="/UserHome" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <UserHome />
-              </PrivateRoute>
-            } 
-            />
-           
-          <Route 
-            path="/addgarbageDetails" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                 <GarbageDetails />
-              </PrivateRoute>
-           } />
-          <Route 
-            path="/addschedule" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                 <Schedule />
-              </PrivateRoute>
-           
-            } />
-          <Route 
-            path="/confirm" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <ConfirmCollection />
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/update-schedule/:scheduleId" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <UpdateSchedule />
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/addcardpayment" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <PaymentOption/>
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/allgarbageDetails" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <SeeGarbageDetails/>
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/allscheduleDetails" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <SeeSchedule/>
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/getgarbage/:garid" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <CalculatePayment />
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/addpayment" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <Payment />
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/addpaymentdetails" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <CalculatePayment />
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/status" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <Status />
-              </PrivateRoute>
-            } />
-          <Route 
-            path="/addCompostRequest" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <AddCompostRequest userEmail={userEmail}/>
-              </PrivateRoute>
-            } />
-            <Route 
-            path="/myCompostRequest" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <MyCompostRequests userEmail={userEmail}/>
-              </PrivateRoute>
-            } />
-            <Route 
-            path="/AllCompostRequests" 
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <AllCompostRequests userEmail={userEmail}/>
-              </PrivateRoute>
-            } />
+                <Route
+                    path="/success"
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <Success />
+                      </PrivateRoute>
+                    }
+                />
+                <Route 
+                    path="/AdminHome" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AdminHome />
+                        </PrivateRoute>} 
+                />
+                  <Route 
+                    path="/UserHome" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <UserHome />
+                      </PrivateRoute>
+                    } 
+                  />
+                  
+                  <Route 
+                    path="/addgarbageDetails" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <GarbageDetails />
+                      </PrivateRoute>
+                  } />
+                  <Route 
+                    path="/addschedule" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <Schedule />
+                      </PrivateRoute>
+                  
+                    } />
+                  <Route 
+                    path="/confirm" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <ConfirmCollection />
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/update-schedule/:scheduleId" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <UpdateSchedule />
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/addcardpayment" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <PaymentOption/>
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/allgarbageDetails" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <SeeGarbageDetails/>
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/allscheduleDetails" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <SeeSchedule/>
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/getgarbage/:garid" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <CalculatePayment />
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/addpayment" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <Payment />
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/addpaymentdetails" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <CalculatePayment />
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/status" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <Status />
+                      </PrivateRoute>
+                    } />
+                  <Route 
+                    path="/addCompostRequest" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AddCompostRequest userEmail={userEmail}/>
+                      </PrivateRoute>
+                    } />
+                    <Route 
+                    path="/myCompostRequest" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <MyCompostRequests userEmail={userEmail}/>
+                      </PrivateRoute>
+                    } />
+                    <Route 
+                    path="/AllCompostRequests" 
+                    element={
+                      <PrivateRoute isAuthenticated={isAuthenticated}>
+                        <AllCompostRequests userEmail={userEmail}/>
+                      </PrivateRoute>
+                    } />
 
                 </Routes>
             )}     
@@ -464,3 +464,4 @@ function App() {
               
 }
 export default App;
+

@@ -29,7 +29,7 @@ const Login = () => {
 
       // Navigate based on user type
       if (userType === 'admin') {
-        navigate('/adminhome', { state: { userEmail: email } }); // Navigate to admin home if user is an admin
+        navigate('/AdminHome', { state: { userEmail: email } }); // Navigate to admin home if user is an admin
       } else {
         localStorage.setItem('userEmail', email);
         navigate('/UserHome', { state: { userEmail: email } }); // Navigate to user home otherwise
