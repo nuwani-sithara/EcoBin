@@ -1,0 +1,63 @@
+.admin-table-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(15, 92, 25);
+  }
+  
+  .admin-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .admin-table th,
+  .admin-table td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .admin-table th {
+    background-color: #2d6a4f;
+    color: white;
+  }
+  
+  .status-column {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .status-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .status-button.canceled {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .status-button.finished {
+    background-color: #58a653;
+    color: white;
+  }
+  
+  .status-canceled {
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .status-finished {
+    background-color: #58a653;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  

@@ -161,7 +161,7 @@ function UserHome() {
                 <section id="cta-section" className="cta-section">
                     <h2>Join the Waste Management Revolution</h2>
                     <p>Take a step towards a cleaner, greener environment with EcoBin.</p>
-                    <Link to="/waste-collection" className="cta-btn">
+                    <Link to="/recyclehome" className="cta-btn">
                       Waste Management
                     </Link>
                     <Link to="/addschedule" className="cta-btn">

@@ -1,0 +1,88 @@
+/* RecycleHistory.css */
+
+.history-container {
+    max-width: 800px;
+
+    margin: 40px auto;
+    margin-top: 180px;
+    padding: 10px;
+  }
+
+  .history-container h2{
+    color: rgb(9, 207, 141);
+    font-size: 24px;
+    text-align: left;
+  }
+
+
+  
+  .history-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 2px solid #2f9435;
+  }
+  
+  .left-section {
+    background-color: #eeeeee;
+    border-radius: 15px;
+    width: 40%;
+    margin-left: 30px;
+  }
+  
+  .right-section {
+    width: 40%;
+    text-align: justify;
+    margin-right: 30px;
+    margin-top: 50px;
+  }
+  
+  .item-row,
+  .total-row,
+  .to-receive,
+  .service-fee {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #fff ;
+    padding-right: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .total-row {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: -20px;
+  }
+  
+  .service-fee {
+    color: red;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: -20px;
+    
+  }
+  
+  .to-receive {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2d6a4f;
+    margin-left: 20px;
+    margin-right: -20px;
+  }
+  
+  p {
+    margin: 5px 0;
+  }
+  
+  .statuss{
+    color: #2f9435;
+  }
+  

@@ -18,11 +18,11 @@
     width: 80vw;
 }
 
-h1 {
+.page-title {
     text-align: center;
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: #333;
+    color: #ffffff;
     border-radius: 10px;
     padding: 10px;
 }

@@ -4,12 +4,14 @@ margin: 20 auto;
 padding: 10px;
 margin-left: 150px;
 margin-right: 150px;
+background-color: #f6f7f6;
 box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
 border-radius: 12px;
-border: 2px solid rgb(15, 92, 25);
+border: 2px solid rgb(22, 141, 38);
 }
 
 .summary-container h3{
+  margin-top: 10px;
   font-size: 18px; /* Increase the font size */
   margin-bottom: 20px; /* Add space below the heading */
   width: 80%; /* Make it span full width */
@@ -19,6 +21,8 @@ border: 2px solid rgb(15, 92, 25);
 }
 
 .summary-items h4{
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-size: 16px;
 }
 
@@ -27,6 +31,19 @@ border: 2px solid rgb(15, 92, 25);
   padding: 20px;
   width: 300px;
   margin-right: 40px;
+}
+
+.payment-method2{
+  display: flex;
+  
+  justify-content: space-between;
+}
+
+.payment-method2 input[type=radio] {
+  border: 0px;
+  margin-top: 10px;
+  width: 80%;
+  height:18px;
 }
 
 .summary-content {

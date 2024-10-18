@@ -19,6 +19,8 @@ const Login = () => {
         email,
         password,
       });
+ 
+      
 
       const { token, userType } = res.data; // Extract token and userType from response
 
@@ -27,9 +29,10 @@ const Login = () => {
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('userEmail', email);
 
+
       // Navigate based on user type
       if (userType === 'admin') {
-        navigate('/AdminHome', { state: { userEmail: email } }); // Navigate to admin home if user is an admin
+        navigate('/adminhome', { state: { userEmail: email } }); // Navigate to admin home if user is an admin
       } else {
         localStorage.setItem('userEmail', email);
         navigate('/UserHome', { state: { userEmail: email } }); // Navigate to user home otherwise
@@ -49,9 +52,9 @@ const Login = () => {
         {/* Display login error message */}
         {error && <p className="error-message">{error}</p>}
 
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} className="login-form">
           {/* Email Input Field */}
-          <div className="input-group">
+          <div className="input-group1">
             <label>Email:</label>
             <input
               type="email"
@@ -61,9 +64,9 @@ const Login = () => {
               placeholder="Enter your email"
             />
           </div>
-
+      
           {/* Password Input Field */}
-          <div className="input-group">
+          <div className="input-group1">
             <label>Password:</label>
             <input
               type="password"

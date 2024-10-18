@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './RecycleManagement.css';
+import '../styles/RecycleManagement.css';
 import ProgressBar from './ProgressBar'; // Import the progress bar component
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus, faTimes } from '@fortawesome/free-solid-svg-icons';
+import Header from '../Header';
+import Footer from '../Footer';
 
-import cardboardImg from '../photos/cartboard.jpg';
-import newspaperImg from '../photos/newspaper.jpg';
-import plasticCansImg from '../photos/bottle.jpg';
-import metalsImg from '../photos/metal.jpg';
+import cardboardImg from '../../photos/cartboard.jpg';
+import newspaperImg from '../../photos/newspaper.jpg';
+import plasticCansImg from '../../photos/bottle.jpg';
+import metalsImg from '../../photos/metal.jpg';
 
 const RecycleManagement = ({ items, setItems }) => {
   const navigate = useNavigate();
@@ -53,6 +55,8 @@ const RecycleManagement = ({ items, setItems }) => {
   }
 
   return (
+    <>
+    <Header/>
     <div>
       <ProgressBar activeStep={1} /> {/* Highlight only the first step */}
       <div className="recycle-container">
@@ -122,6 +126,8 @@ const RecycleManagement = ({ items, setItems }) => {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
