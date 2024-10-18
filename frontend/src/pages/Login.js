@@ -19,6 +19,8 @@ const Login = () => {
         email,
         password,
       });
+ 
+      
 
       const { token, userType } = res.data; // Extract token and userType from response
 
@@ -27,14 +29,16 @@ const Login = () => {
       localStorage.setItem('isLoggedIn', 'true');
       localStorage.setItem('userEmail', email);
 
-      // Navigate based on user type
-      if (userType === 'admin') {
-        navigate('/adminhome', { state: { userEmail: email } }); // Navigate to admin home if user is an admin
-      } else {
-        localStorage.setItem('userEmail', email);
-        navigate('/UserHome', { state: { userEmail: email } }); // Navigate to user home otherwise
-        
-      }
+
+       // Navigate based on user type
+       switch (userType) {
+        case "admin":
+            navigate("/AdminHome", { state: { userEmail: email } });
+            break;
+        case "user":
+            navigate("/UserHome", { state: { userEmail: email } });
+            break;
+    }
     } catch (err) {
       console.error(err);
       setError('Invalid Credentials. Please try again.');

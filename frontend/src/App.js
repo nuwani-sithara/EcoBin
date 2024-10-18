@@ -202,14 +202,7 @@ function App() {
                     </PrivateRoute>
                     }
                 />
-                 <Route 
-                    path="/adminhome" 
-                    element={
-                    <PrivateRoute isAuthenticated={isAuthenticated}>
-                        <AdminHome />
-                        </PrivateRoute>
-                        } 
-                        />
+            
                 <Route 
                     path="/UserHome" 
                     element={
