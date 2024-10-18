@@ -1,7 +1,7 @@
-/* CompostActions.css */
+/* GarbageActions.css */
 
-/* Container for the entire compost actions page */
-.compost-actions-container {
+/* Container for the entire garbage actions page */
+.garbage-actions-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@
 }
 
 /* Container for the two sections (side-by-side layout) */
-.compost-sections {
+.garbage-sections {
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -30,9 +30,9 @@
 }
 
 /* Individual section styling */
-.compost-section {
-    background-color: #2ac72f; /* Green color for the sections */
-    color: rgb(11, 11, 11);
+.garbage-section {
+    background-color: #1acf32; /* Red color for the sections */
+    color: rgb(11, 10, 10);
     border-radius: 10px;
     padding: 30px 20px;
     flex: 1;
@@ -41,33 +41,32 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Section title styling */
-.compost-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+.main-title {
+    font-size: 2.5rem;
     font-weight: bold;
-    color: #f6f6f6;
+    color: #f7fbff; /* Darker shade of blue */
+    margin-bottom: 40px;
 }
 
 /* Section description styling */
-.compost-section p {
+.garbage-section p {
     font-size: 1.2rem;
 }
 
 /* Hover effect for the section */
-.compost-section:hover {
+.garbage-section:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
-    .compost-sections {
+    .garbage-sections {
         flex-direction: column;
         gap: 20px;
     }
 
-    .compost-section {
+    .garbage-section {
         width: 100%;
     }
 }
