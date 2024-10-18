@@ -15,7 +15,7 @@
     max-width: 600px;
 }
 
-h2 {
+.status-container h2 {
     font-size: 2em; 
     font-weight: bold;
     color: #333; 

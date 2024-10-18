@@ -19,10 +19,11 @@
   opacity: 90%;
 }
 
-h1 {
+.garbageform-container h1 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 24px; 
+  color: black;
 }
 
 form {

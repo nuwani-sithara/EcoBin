@@ -99,8 +99,9 @@ const Schedule = () => {
     return (
         <>
         <Header/>
-        <div className="schedule-container">
-            <div className="schedule-form-container">
+        <div className="schedulebackground-image">
+      
+            <div className="schedule-form-container" >
                 <h2>Schedule Time Slot</h2>
                 {message && <p>{message}</p>}
                 <form onSubmit={handleSubmit}>
@@ -167,6 +168,7 @@ const Schedule = () => {
                 </form>
             </div>
         </div>
+    
         <Footer/>
         </>
     );
