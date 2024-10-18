@@ -31,7 +31,7 @@ import RecycleManagement from './components/user/RecycleManagement';
 import Summary from './components/user/Summary';
 import ScheduleCollection from './components/user/ScheduleCollection';
 import PrivateRoute from './components/PrivateRoute';
-import Success from './pages/Success';
+
 import React, { useState, useEffect } from 'react';
 import UserWasteDetails from './components/user/UserWasteDetails';
 import Success from './components/user/Success';
@@ -114,15 +114,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
 
-                {/* Private Routes (Only accessible if authenticated) */}
-                <Route
-                    path="/home"
-                    element={
-                    <PrivateRoute isAuthenticated={isAuthenticated}>
-                        <Home userName={userName} userEmail={userEmail} />
-                    </PrivateRoute>
-                    }/>
-
+                
           {/* Private Routes (Only accessible if authenticated) */}
           <Route
             path="/recyclehome"
