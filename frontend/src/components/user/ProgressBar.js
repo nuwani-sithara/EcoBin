@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProgressBar.css'; // Include the CSS for styling
+import '../styles/ProgressBar.css'; // Include the CSS for styling
 
 const ProgressBar = ({ activeStep }) => {
   return (

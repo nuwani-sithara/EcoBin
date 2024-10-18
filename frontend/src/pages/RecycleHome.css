@@ -1,0 +1,141 @@
+#market{
+    /* padding: 50px 0; */
+    margin-top: 20vh;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 0%;
+
+    background-color: #0a5217;
+}
+.sub-title{
+    text-align: center;
+    font-size: 5em;
+    margin: 0.5em 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.work{
+    margin-left: 60px;
+    margin-right: 80px;
+    border: 3px solid #16ad31;
+    border-radius: 0.5em;
+    width: 80%;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    object-fit: cover;
+    padding: 3em;
+    gap: 2em;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-bottom: 0vh;
+}
+.work img{
+    width: 400px;
+    height: 250px;
+    border-radius: 0.5em;
+    display: block;
+    transition: transform 0.5s;
+
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(49, 49, 49), #0a5217);
+    border-radius: 0.5em;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #0fc1e1;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.layer a i span{
+    
+    align-items: center;
+    font-size: 5em;
+}
+
+.layer a:hover{
+    background: linear-gradient(to bottom, #535652, #ffffff);
+}
+
+.work:hover{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.img{
+    opacity: 0.5;
+
+}
+.btn1{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid white;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn1:hover{
+    background: #0fc1e1;
+}
+
+#market .btn{
+    margin: 100px auto;
+    width: fit-content;
+    align-items: center;
+}
+
+.top{
+    color:  #61d176;
+    font-size: 3vh;
+    background-color: black;
+    margin-bottom: 2vh;
+    text-align: center;
+    justify-content: center;
+}
+
+.btn12{
+    background-color: #fff;
+    width: 10vh;
+    height: 5vh;
+}
+
+.btn12:hover{
+    background: #535652;
+}
