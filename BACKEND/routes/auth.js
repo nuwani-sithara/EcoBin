@@ -75,7 +75,8 @@ router.post('/login', async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        // Send both the token and user_type in the response
+        res.json({ token, userType: user.user_type });
       }
     );
   } catch (err) {
@@ -83,6 +84,7 @@ router.post('/login', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
+
 
 
 
