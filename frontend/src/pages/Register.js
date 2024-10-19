@@ -27,7 +27,7 @@ const Register = () => {
       localStorage.setItem('token', res.data.token);
       
       // Navigate to the home page after successful registration
-      navigate('/home');
+      navigate('/login');
     } catch (err) {
       console.error(err);
       alert('User registration failed. Please try again.');

@@ -48,11 +48,18 @@ app.use("/garbage",garbageRouter);
 app.use("/schedule",scheduleRouter);
 app.use("/calculatepayment",calculatepaymentRouter);
 app.use("/cardpayment",cardpaymentRouter);
-app.use('/api/auth', require('./routes/auth')); // Authentication routes
-app.use('/api/recycle', require('./routes/recycle')); // Recycle management routes
+app.use('/compostRequest',compostrequestRouter); 
+
+const authRoutes = require('./routes/auth'); // Import the auth routes
+const recycleRoutes = require('./routes/recycle'); // Import the recycle routes
+
+// Use the auth routes
+app.use('/api/auth', authRoutes); // All auth routes will now start with /api/auth
+app.use('/api/recycle', recycleRoutes); // All recycle routes will now start with /api/recycle
 
 
-app.use('/compostRequest',compostrequestRouter); // Recycle management routes
+
+
 
 
 
