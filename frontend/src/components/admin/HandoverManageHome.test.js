@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom'; // To enable routing
-import HandoverManageHome from '../components/HandoverManageHome'; // Adjust path as needed
+import HandoverManageHome from './HandoverManageHome' // Adjust path as needed
 
 describe('HandoverManageHome Component', () => {
 

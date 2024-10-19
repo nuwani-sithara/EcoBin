@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import axios from 'axios';
-import AdminTable from '../components/AdminTable';
+import AdminTable from './AdminTable'
 
 // Mock axios
 jest.mock('axios');

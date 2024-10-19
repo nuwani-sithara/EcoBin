@@ -3,7 +3,7 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import axios from 'axios';
-import ViewUserWastes from './ViewUserWastes'; // Adjust the import path as necessary
+import ViewUserWastes from './ViewUserWastes'; 
 
 jest.mock('axios');
 

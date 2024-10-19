@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import GarbageActions from '../GarbageActions'; // Adjust the import path if necessary
+import GarbageActions from './GarbageActions'; // Adjust the import path if necessary
 import '@testing-library/jest-dom/extend-expect';
 
 describe('GarbageActions Component', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import axios from 'axios';
-import ManageCategories from '../components/ManageCategories'; // Adjust the path as necessary
+import ManageCategories from './ManageCategories'; // Adjust the path as necessary
 import { BrowserRouter as Router } from 'react-router-dom';
 
 jest.mock('axios'); // Mock axios for API calls

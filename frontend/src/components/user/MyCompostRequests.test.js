@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import axios from 'axios';
-import MyCompostRequests from '../MyCompostRequests'; // Adjust the import path if necessary
+import MyCompostRequests from './MyCompostRequests'; // Adjust the import path if necessary
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('axios');
