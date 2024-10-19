@@ -16,14 +16,16 @@ export default function Footer() {
                     </div>
                     <div className="col-box">
                         <span><i className='bx bxs-envelope'></i></span>
-                        <span>agroprolk@gmail.com</span>
+                        <span>ecobin@gmail.com</span>
                     </div>
                 </div>
                 <div className="col-right">
                     <span>About Our Services</span>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    EcoBin is a smart urban waste management platform dedicated to cleaner 
+                    cities and sustainable practices. We streamline waste collection, recycling, 
+                    and disposal, reducing environmental impact. Join us in turning waste into valuable 
+                    resources and building a greener future for all ...
                     </p>
                     <div className="social-icons">
                         <i className='bx bxl-facebook-circle'></i>
@@ -33,7 +35,7 @@ export default function Footer() {
                 </div>
             </footer>
             <div className="footer-bottom">
-                <p>&copy; 2024 AgroProLK. All rights reserved.</p>
+                <p>&copy; 2024 EcoBin. All rights reserved.</p>
             </div>
         </div>
     );

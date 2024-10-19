@@ -1,5 +1,5 @@
 .sidebarmenu {
-   
+    height: 800px;
     background-color: #ffffff;
     padding: 20px;
     position: relative;
@@ -9,13 +9,14 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
     border-radius: 8px; 
     transition: all 0.3s ease; 
+    width: 350px;
 }
+
 .logoo-container {
     display: flex; 
     justify-content: center; 
     align-items: center; 
     margin-bottom: -150px; 
-  
     height: 300px; 
 }
 
@@ -30,7 +31,6 @@
  
 }
 
-
 .sidebarmenu a {
     display: block;
     padding: 12px 15px; 
@@ -40,14 +40,13 @@
     border-radius: 5px; 
     margin: 5px 0; 
     transition: background-color 0.3s, color 0.3s; 
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .sidebarmenu a:hover {
     color: #ffffff; 
     background-color: #56bb4d; 
 }
-
 
 .sidebarmenu span {
     display: block;
@@ -56,13 +55,11 @@
     margin: 5px 0; 
 }
 
-
 .sidebarmenu-bottom {
     width: 100%; 
     margin-top: auto; 
     border-radius: 5px;
 }
-
 
 .sidebarmenu-bottom button {
     margin-top: 50px;
@@ -76,7 +73,6 @@
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s; 
 }
-
 
 .sidebarmenu-bottom button:hover {
     background-color: #096b16; 
