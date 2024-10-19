@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SideBar from './SideBar';
+import '../styles/ManageCategories.css'; // Import the custom CSS
+
 
 export default function ManageWaste() {
     const [wastedetails, setWastesDetails] = useState([]);
@@ -104,8 +106,9 @@ export default function ManageWaste() {
     return (
         <div className="admin-container">
             <SideBar />
-            <div style={{ marginTop: "0%" }} className="tb">
-                <table style={{ marginTop: "0%" }} className="table table-hover">
+            <div  className="categories-table">
+            <h1 className="head1">Manage Waste Details</h1>
+                <table  className="table table-hover">
                     <thead className="table-dark">
                         <tr className="tblrw">
                             <th scope="col">No</th>
@@ -118,7 +121,7 @@ export default function ManageWaste() {
                             <th scope="col">Actions</th>
                         </tr>
                     </thead>
-                    <tbody className="tblbdy">
+                    <tbody className="categories-table">
                         {wastedetails.map((item, index) => (
                             <tr className="tblrw" key={item._id}>
                                 <th scope="row">{index + 1}</th>

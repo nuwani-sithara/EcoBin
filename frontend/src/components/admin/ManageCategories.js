@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import SideBar from './SideBar'; // Ensure this path is correct
 import '../styles/ManageCategories.css'; // Import the custom CSS
+// import '../styles/RecycleManagement.css';
 import { Navigate } from "react-router";
 
 export default function ManageCategories() {
@@ -66,8 +67,9 @@ export default function ManageCategories() {
         <><div className="admin-container">
             <SideBar />
 
-            <div style={{ marginTop: "0%" }} className="tb">
-                <table style={{ marginTop: "0%" }} className="table table-hover">
+            <div  className="categories-table">
+                <h1 className="head1">Manage Categories</h1>
+                <table  className="table table-hover">
                     <thead className="table-dark">
                         <tr className="tblrw">
                             <th scope="col">No</th>
@@ -78,7 +80,7 @@ export default function ManageCategories() {
 
                         </tr>
                     </thead>
-                    <tbody className="tblbdy">
+                    <tbody className="categories-table">
                         {categories.map((item, index) => (
                             <tr className="tblrw" key={item._id}>
                                 <th scope="row">{index + 1}</th>

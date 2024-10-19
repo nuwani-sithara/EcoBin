@@ -37,8 +37,8 @@ function Header() {
                     <li><Link to="/UserHome" state={{ userEmail }}>Home</Link></li>
                     <li><Link to="/recyclehome">Waste Management</Link></li>
                     <li><Link to="/addschedule">Waste Collection</Link></li>
-                    <li><Link to="/addCompostRequest">Purchase Fertilizer</Link></li>
-                    <li><Link to="/addwaste-user" state={{ userEmail }}>Garbage Handover</Link></li>
+                    <li><Link to="/Compost-Actions">Purchase Fertilizer</Link></li>
+                    <li><Link to="/Garbage-Actions" state={{ userEmail }}>Garbage Handover</Link></li>
                    
                     <button onClick={handleLogout} style={{ padding: '5px 10px', fontSize: '16px',backgroundColor: 'red', width: '120px', height: '40px' }}>
         Logout

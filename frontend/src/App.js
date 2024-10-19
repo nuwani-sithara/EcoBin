@@ -522,6 +522,8 @@ import HandoverManageHome from './components/admin/HandoverManageHome';
 import ManageWaste from './components/admin/ManageWaste';
 import AddRoutes from './components/admin/AddRoutes';
 import ManageRoutes from './components/admin/ManageRoutes';
+import GarbageActions from './components/user/GarbageActions';
+import CompostActions from './components/user/CompostActions';
 
 import axios from 'axios';
 import Login from './pages/Login';
@@ -953,6 +955,21 @@ function App() {
                 <AllCompostRequests userEmail={userEmail}/>
               </PrivateRoute>
             } />
+            <Route 
+            path="/Garbage-Actions" 
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <GarbageActions userEmail={userEmail}/>
+              </PrivateRoute>
+            } />
+            <Route 
+            path="/Compost-Actions" 
+            element={
+              <PrivateRoute isAuthenticated={isAuthenticated}>
+                <CompostActions userEmail={userEmail}/>
+              </PrivateRoute>
+            } />
+
 
                 </Routes>
             )}     
