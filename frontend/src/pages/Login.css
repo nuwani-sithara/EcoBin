@@ -6,6 +6,7 @@
   height: 100vh;
   background-color: #e4dddd;
   
+
 }
 
 /* Container for the login form */
@@ -17,8 +18,13 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   text-align: center;
-}
 
+}
+.login-logo {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add space between logo and title */
+}
 /* Title styling */
 .login-title {
   margin-bottom: 20px;

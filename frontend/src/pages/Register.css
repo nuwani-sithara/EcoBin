@@ -3,10 +3,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150vh;
+  
   background: #ffffff;
+  
 }
-
 /* Container for the register form */
 .register-container {
   margin-top: 50px;

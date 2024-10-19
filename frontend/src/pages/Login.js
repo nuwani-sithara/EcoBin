@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Include the CSS for styling
+import logo from '../Assets/logo.png';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -46,9 +47,10 @@ const Login = () => {
 
   return (
     <div className="login-wrapper">
+      
       <div className="login-container">
         <h2 className="login-title">Login</h2>
-
+        <img src={logo} alt="Logo" className="login-logo" /> {/* Logo image */}
         {/* Display login error message */}
         {error && <p className="error-message">{error}</p>}
 
