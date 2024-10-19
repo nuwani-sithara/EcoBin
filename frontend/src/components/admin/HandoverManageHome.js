@@ -20,7 +20,7 @@ const HandoverManageHome = () => {
           <i className="bx bxs-leaf dashboard-icon"></i>
             <h2>Add Category</h2>
             <p>
-              Manage all recycling activities, track waste types, and processing updates.
+              Add Categories of the Garbage
             </p>
             <Link to="/add-category" className="dashboard-btn">Manage</Link>
           </div>
@@ -29,7 +29,7 @@ const HandoverManageHome = () => {
             <i className="bx bxs-truck dashboard-icon"></i>
             <h2>Manage Categories</h2>
             <p>
-              Oversee scheduled waste collections and optimize collection routes.
+             View, Edit and Delete your categories
             </p>
             <Link to="/manage-category" className="dashboard-btn">Manage</Link>
           </div>
@@ -38,7 +38,7 @@ const HandoverManageHome = () => {
             <i className="bx bxs-cart dashboard-icon"></i>
             <h2>Manage Waste Details</h2>
             <p>
-              Handle purchase requests for waste bins, recycling equipment, and supplies.
+              Manage user entered waste details
             </p>
             <Link to="/manage-waste" className="dashboard-btn">Manage</Link>
           </div>
@@ -47,7 +47,7 @@ const HandoverManageHome = () => {
           <i className="bx bxs-trash-alt dashboard-icon"></i>
             <h2>Add Routes</h2>
             <p>
-              Monitor garbage handovers and ensure proper disposal processes.
+              Add routes and time
             </p>
             <Link to="/add-routes-admin" className="dashboard-btn">Manage</Link>
           </div>
@@ -56,7 +56,7 @@ const HandoverManageHome = () => {
           <i className="bx bxs-trash-alt dashboard-icon"></i>
             <h2>Manage Routes</h2>
             <p>
-              Monitor garbage handovers and ensure proper disposal processes.
+              View, edit and delete route details
             </p>
             <Link to="/manage-route-admin" className="dashboard-btn">Manage</Link>
           </div>
