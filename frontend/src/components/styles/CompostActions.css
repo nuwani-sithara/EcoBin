@@ -62,6 +62,9 @@
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
+    .compost-actions-container {
+        margin-top: 20vh;
+    }
     .compost-sections {
         flex-direction: column;
         gap: 20px;

@@ -61,6 +61,9 @@
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
+    .garbage-actions-container {
+        margin-top: 30vh;
+    }
     .garbage-sections {
         flex-direction: column;
         gap: 20px;

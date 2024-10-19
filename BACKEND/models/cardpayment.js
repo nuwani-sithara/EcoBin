@@ -38,3 +38,4 @@ const cardpaymentSchema = new Schema({
 const CardPayment = mongoose.model('CardPayment', cardpaymentSchema);
 
 module.exports = CardPayment;
+

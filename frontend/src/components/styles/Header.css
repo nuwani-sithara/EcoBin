@@ -99,6 +99,7 @@ nav ul a:hover {
     #menu {
         display: block; 
         cursor: pointer;
+        color: white;
     }
 }
 
