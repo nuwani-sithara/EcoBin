@@ -17,7 +17,6 @@ const URL = process.env.MONGODB_URL;
 mongoose.connect(URL, {
     // useCreateIndex: true,
     // useNewUrlParser: true,
-    
     useNewUrlParser: true,
     useUnifiedTopology: true,
 });
@@ -42,7 +41,6 @@ const garbageRouter = require("./routes/garbageDetails.js");
 const scheduleRouter = require("./routes/scheduleTime.js");
 const calculatepaymentRouter = require("./routes/calculatepayment.js");
 const cardpaymentRouter = require("./routes/cardpayment.js");
-
 const compostrequestRouter = require("./routes/compostrequest.js");
 
 

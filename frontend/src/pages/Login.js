@@ -49,8 +49,9 @@ const Login = () => {
     <div className="login-wrapper">
       
       <div className="login-container">
-        <h2 className="login-title">Login</h2>
+        
         <img src={logo} alt="Logo" className="login-logo" /> {/* Logo image */}
+        <h2 className="login-title">Login</h2>
         {/* Display login error message */}
         {error && <p className="error-message">{error}</p>}
 

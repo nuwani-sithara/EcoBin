@@ -142,8 +142,8 @@ const AddCompostRequest = () => {
                             </div>
                             <button
                                 type="button"
-                                className="btn btn-outline-light"
-                                style={{ width: '100%' }}
+                                className="submit-button"
+                                style={{ width: '100%' , backgroundColor:'blue'}}
                                 onClick={calculateFee}
                             >
                                 Calculate Cost
