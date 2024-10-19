@@ -6,9 +6,6 @@
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/react-fontawesome": "^0.2.2",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.7.7",
     "jspdf": "^2.5.2",
     "jspdf-autotable": "^3.8.4",
     "moment-timezone": "^0.5.46",
@@ -45,7 +42,11 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
-    "jest": "^27.5.1"
+    "@testing-library/user-event": "^14.5.2",
+    "axios": "^1.7.7",
+    "jest": "^27.5.1",
+    "jest-dom": "^4.0.0"
   }
 }
