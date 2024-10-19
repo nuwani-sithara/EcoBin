@@ -1,11 +1,9 @@
-#market{
+.market{
     /* padding: 50px 0; */
-    margin-top: 20vh;
+    padding-top: 60px;
     margin-left: 60px;
     margin-right: 60px;
     margin-bottom: 0%;
-
-    background-color: #0a5217;
 }
 .sub-title{
     text-align: center;
@@ -20,7 +18,7 @@
     margin-right: auto;
 }
 .work{
-    margin-left: 60px;
+    margin-left: 80px;
     margin-right: 80px;
     border: 3px solid #16ad31;
     border-radius: 0.5em;
@@ -31,7 +29,7 @@
     justify-content: center;
     overflow: hidden;
     object-fit: cover;
-    padding: 3em;
+
     gap: 2em;
     color: white;
     cursor: pointer;
@@ -39,7 +37,9 @@
     margin-bottom: 0vh;
 }
 .work img{
-    width: 400px;
+    margin-left: 40px;
+    margin-right: 25px;
+    width: 360px;
     height: 250px;
     border-radius: 0.5em;
     display: block;
@@ -115,7 +115,7 @@
     background: #0fc1e1;
 }
 
-#market .btn{
+.market .btn{
     margin: 100px auto;
     width: fit-content;
     align-items: center;
@@ -138,4 +138,79 @@
 
 .btn12:hover{
     background: #535652;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .market {
+        margin-left: 20px;
+        margin-right: 20px;
+        padding-top: 30px;
+    }
+
+    .sub-title {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+    }
+
+    .work {
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 100%;
+        height: auto;
+    }
+
+    .work img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .btn1 {
+        width: 90%;
+        padding: 10px 20px;
+        font-size: 1.2em;
+    }
+
+    .btn12 {
+        width: 8vh;
+        height: 4vh;
+    }
+
+    .layer {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .top {
+        font-size: 2vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .market {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .sub-title {
+        font-size: 2.5em;
+    }
+
+    .work img {
+        width: 100%;
+        height: 200px;
+    }
+
+    .btn1 {
+        padding: 8px 15px;
+        font-size: 1em;
+    }
+
+    .layer a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+    }
 }

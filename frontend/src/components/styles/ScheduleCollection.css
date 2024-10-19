@@ -86,3 +86,74 @@ border: 2px solid rgb(22, 141, 38);
   .confirm-button:hover {
     background: #45a145; /* Darker green on hover */
   }
+
+  /* Mobile responsive styling */
+@media (max-width: 768px) {
+  .schedule-container1 {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .schedule-container1 h3 {
+    font-size: 16px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .schedule-form2 {
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .schedule-form2 label {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 16px;
+  }
+
+  .schedule-form2 input[type="text"],
+  .schedule-form2 select,
+  .schedule-form2 .date-picker {
+    width: 100%;
+  }
+
+  .schedule-form2 .date-picker {
+    width: 293px !important;
+  }
+
+  .confirm-button {
+    width: 100px;
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 12px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .schedule-container1 {
+    padding: 15px;
+  }
+
+  .schedule-container1 h3 {
+    font-size: 14px;
+  }
+
+  .schedule-form2 label {
+    font-size: 14px;
+  }
+
+  .schedule-form2 input[type="text"],
+  .schedule-form2 select,
+  .schedule-form2 .date-picker {
+    font-size: 14px;
+  }
+
+  .confirm-button {
+    font-size: 16px;
+    padding: 10px;
+  }
+}

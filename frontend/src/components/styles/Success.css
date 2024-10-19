@@ -72,3 +72,63 @@ margin-right: 100px;
   
   }
   
+  /* Mobile Responsive Styling */
+@media (max-width: 768px) {
+  .success-box {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+  }
+
+  .success-message {
+    font-size: 20px;
+  }
+
+  .success-icon {
+    font-size: 80px;
+    width: 30%;
+    height: 30%;
+    padding: 15px;
+  }
+
+  .amount {
+    font-size: 20px;
+  }
+
+  .instructions {
+    font-size: 14px;
+  }
+
+  .button-container {
+    flex-direction: column;
+  }
+
+  .home-button,
+  .more-button {
+    width: 80%; /* Buttons take up more space on mobile */
+    margin-bottom: 15px; /* Add some space between buttons */
+  }
+}
+
+@media (max-width: 480px) {
+  .success-message {
+    font-size: 18px;
+  }
+
+  .success-icon {
+    font-size: 60px;
+    width: 40%;
+    height: 30%;
+    padding: 10px;
+  }
+
+  .amount {
+    font-size: 18px;
+  }
+
+  .home-button,
+  .more-button {
+    width: 100%;
+    font-size: 14px;
+  }
+}

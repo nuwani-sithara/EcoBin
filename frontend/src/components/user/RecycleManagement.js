@@ -78,7 +78,7 @@ const RecycleManagement = ({ items, setItems }) => {
                   </div>
                   {!itemData.selected ? (
                     <button
-                      className="add-button"
+                      className="add-button1"
                       onClick={() =>
                         setItems({ ...items, [itemName]: { ...itemData, selected: true } })
                       }
@@ -89,16 +89,16 @@ const RecycleManagement = ({ items, setItems }) => {
                     <div>
                       <div className="weight-control">
                         <button onClick={() => handleDecrement(itemName)}>
-                          {/* <FontAwesomeIcon icon={faMinus} /> */}
+                        <i class='bx bx-minus'></i>
                         </button>
                         <span>{itemData.weight.toFixed(1)}</span>
                         <button onClick={() => handleIncrement(itemName)}>
-                          {/* <FontAwesomeIcon icon={faPlus} /> */}
+                        <i class='bx bx-plus'></i>
                         </button>
                         
-                        <p>Rs.{itemData.total.toFixed(2)}</p>
+                        <p className='total-for-each'>Rs.{itemData.total.toFixed(2)}</p>
                         <button
-                          className="cancel-button"
+                          className="cancel-button1"
                           onClick={() =>
                             setItems({
                               ...items,
@@ -106,7 +106,7 @@ const RecycleManagement = ({ items, setItems }) => {
                             })
                           }
                         >
-                          {/* <FontAwesomeIcon icon={faTimes} /> */}
+                          <i class='bx bx-x'></i>
                         </button>
                       </div>
                       

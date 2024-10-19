@@ -1,5 +1,5 @@
 /* Main container for the progress bar */
-.progress-container {
+.progress-container1 {
   
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 /* Progress bar styling */
-.progress-bar {
+.progress-bar1 {
   margin-top: 150px;
   display: flex; /* Display items in a row */
   align-items: center; /* Center the progress bar vertically */
@@ -21,7 +21,7 @@
 }
 
 /* Individual step circles */
-.progress-step {
+.progress-step1 {
   width: 25px !important; /* Circle width */
   height: 25px !important; /* Circle height */
   background-color: #ddd; /* Default inactive color */
@@ -32,7 +32,7 @@
 }
 
 /* Line between steps */
-.progress-line {
+.progress-line1 {
   height: 12px !important; /* Use !important to ensure the height is applied */
   flex-grow: 1; /* Make the line take up remaining space between steps */
   background-color: #ddd; /* Default inactive color */
@@ -41,19 +41,62 @@
 }
 
 /* Active step circle */
-.progress-step.active {
+.progress-step1.active1 {
   background-color: #318a62; /* Green background for active */
   border-color: #318a62; /* Green border for active */
 }
 
 /* Active line */
-.progress-line.active {
+.progress-line1.active1 {
   background-color: #318a62; /* Green color for active line */
 }
 
 /* Title below the progress bar */
-.progress-container h2 {
+.progress-container1 h2 {
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .progress-bar1 {
+    width: 200px; /* Make the progress bar width more fluid on mobile */
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 30px;
+  }
+
+  .progress-step1 {
+    width: 20px; /* Reduce circle size on smaller screens */
+    height: 20px;
+  }
+
+  .progress-line1 {
+    height: 8px; /* Reduce line thickness on smaller screens */
+  }
+
+  .progress-container1 h2 {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-bar1 {
+    width: 95%; /* Maximize width for smaller mobile screens */
+    margin-top: 100px;
+  }
+
+  .progress-step1 {
+    width: 18px; /* Further reduce circle size for very small screens */
+    height: 18px;
+  }
+
+  .progress-line1 {
+    height: 6px; /* Further reduce line thickness for small screens */
+  }
+
+  .progress-container1 h2 {
+    font-size: 18px; /* Smaller title for mobile */
+  }
 }

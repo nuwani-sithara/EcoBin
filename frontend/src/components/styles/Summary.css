@@ -27,10 +27,15 @@ border: 2px solid rgb(22, 141, 38);
 }
 
 .payment-method{
-  margin-top: 80px;
+  margin-top: 100px;
   padding: 20px;
   width: 300px;
+  
   margin-right: 40px;
+}
+
+.payment-method h4{
+  font-size: 18px;
 }
 
 .payment-method2{
@@ -144,4 +149,81 @@ padding: 5px; /* Remove padding around text */
   height: 40px;
   margin-left: 800px;
  
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .summary-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    max-width: 100%;
+  }
+
+  .summary-container h3 {
+    margin-left: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .summary-content {
+    flex-direction: column; /* Stack items vertically on mobile */
+    margin-top: 20px;
+  }
+
+  .summary-items {
+    width: 350px;
+    margin-left: -20px;
+  }
+
+  .payment-method {
+    width: 100%;
+    margin-top: 20px;
+    margin-right: 0;
+    padding: 10px;
+  }
+
+  .item-card2 {
+    width: 100%;
+  }
+
+  .next-button-container2 {
+    text-align: center;
+    margin-top: -30px;
+    width: 120px;
+    margin-left: 100px;
+  
+  }
+
+  .next-button2 {
+    margin-left: 0;
+    width: 150px; /* Center the button on mobile */
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .summary-container {
+    padding: 15px;
+  }
+
+  .summary-container h3 {
+    font-size: 14px;
+  }
+
+  .item-row2 span {
+    padding: 3px;
+  }
+
+  .payment-method h4 {
+    font-size: 16px;
+  }
+
+  .item-card2 {
+    padding: 15px;
+  }
+
+  .next-button2 {
+    width: 90%;
+  }
 }
