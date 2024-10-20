@@ -65,6 +65,9 @@
     .compost-actions-container {
         margin-top: 20vh;
     }
+    .main-title{
+        margin-top: 10vh;
+    }
     .compost-sections {
         flex-direction: column;
         gap: 20px;

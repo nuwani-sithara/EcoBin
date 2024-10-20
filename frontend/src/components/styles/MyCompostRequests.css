@@ -118,6 +118,12 @@ button:hover {
 
 /* Responsive Table */
 @media (max-width: 768px) {
+    .compost-requests-page{
+        margin-top: 20vh;
+    }
+    .page-title{
+        margin-top: 10vh;
+    }
     table, thead, tbody, th, td, tr {
         display: block;
     }
