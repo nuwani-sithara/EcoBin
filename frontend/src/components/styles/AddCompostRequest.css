@@ -14,7 +14,7 @@
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
     max-width: 600px; /* Set max width for better readability */
     width: 100%;
-    /* padding: 30px; */
+    margin-top: 20vh;
 }
 
 /* H1 title styling */
@@ -98,6 +98,7 @@ button.submit-button:active {
 @media (max-width: 700px) {
     .compost-request-container {
         padding: 20px;
+        margin-top: 30vh;
     }
 
     h1.h1 {
