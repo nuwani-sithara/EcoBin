@@ -28,28 +28,40 @@ const AddCompostRequest = () => {
 
     // Fetch organic waste details for the logged-in user
     useEffect(() => {
-        if (userEmail) {
-            axios.get(`http://localhost:8070/wastedetail/user-waste/${userEmail}`)
-                .then((response) => {
-                    const wasteData = response.data;
-
-                    // Filter out only organic waste by mapping category ID to category name
+        // Fetch categories and waste details in sequence to ensure proper mapping
+        const fetchCategoriesAndWaste = async () => {
+            try {
+                // Fetch all categories
+                const categoriesResponse = await axios.get('http://localhost:8070/category/view-categories');
+                const fetchedCategories = categoriesResponse.data;
+                setCategories(fetchedCategories); // Set categories
+    
+                // Once categories are fetched, fetch waste details
+                if (userEmail) {
+                    const wasteResponse = await axios.get(`http://localhost:8070/wastedetail/user-waste/${userEmail}`);
+                    const wasteData = wasteResponse.data;
+                    console.log(wasteData);
+    
+                    // Filter out organic waste based on the category mapping
                     const totalOrganicWaste = wasteData
                         .filter((waste) => {
-                            const category = categories.find(cat => cat._id === waste.category);
-                            return category && category.name === 'organic'; // Use category name
+                            const category = fetchedCategories.find(cat => cat._id === waste.category); // Match category ID with category list
+                            return category && category.name === 'Organic'; // Return only organic waste
                         })
-                        .reduce((sum, waste) => sum + waste.weight, 0);
-
-                    // Set the organic waste weight and potential compost output (35% of organic waste)
+                        .reduce((sum, waste) => sum + waste.weight, 0); // Calculate total organic waste
+    
+                    // Set organic waste weight and potential compost output (35% of organic waste)
                     setOrganic(totalOrganicWaste);
-                    setPotential((totalOrganicWaste * 0.35).toFixed(2)); // 35% of organic waste as compost
-                })
-                .catch((error) => {
-                    console.error('Error fetching waste data:', error);
-                });
-        }
-    }, [userEmail, categories]); // Fetch when the component mounts or when userEmail or categories change
+                    setPotential((totalOrganicWaste * 0.35).toFixed(2)); // 35% compost from organic waste
+                }
+            } catch (error) {
+                console.error('Error fetching categories or waste data:', error);
+            }
+        };
+    
+        fetchCategoriesAndWaste();
+    }, [userEmail]); // Only rerun when userEmail changes
+     // Fetch when the component mounts or when userEmail or categories change
 
     const handleChange = (e) => {
         const { name, value } = e.target;
